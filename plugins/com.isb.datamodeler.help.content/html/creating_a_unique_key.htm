@@ -1,0 +1,141 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 8" />
+ <title>Creating a Unique Key</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nCreating a Unique Key");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "cover.htm");
+document.write("<a href=\"cover.htm\">Data Modeler<\/a> > Creating a Unique Key<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Creating a Unique Key</h1>
+<p>Each table can contain one or more fields whose values uniquely identify 
+ each record in that table (UK). That is, there cannot be two or more different 
+ records whose values in those fields are identical. There can be several 
+ unique keys in a table.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_uk_001.jpg" alt="creating_uk_001.jpg" style="border: none;" width="188" height="150" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">Steps</p>
+<p>&#160;</p>
+<p>1. &#160;&#160;Several options are available for including a Unique 
+ Key in a table:</p>
+<p class="Topic-Text-Bulleted2">- In the Data Modeler Navigator view, positioned 
+ on the table where the column must be created, right click and in the 
+ popup menu, select <span style="font-weight: bold;"><b>New&gt;Unique Key</b></span>.</p>
+<p class="Topic-Text-Bulleted2">- In the editor palette, click the element 
+ &#160;<img src="images/diagram_editor_palette_002.jpg" alt="diagram_editor_palette_002.jpg" style="border: none;" width="108" height="20" border="0" />, go to the table where 
+ you want to create the unique key and click again.</p>
+<p class="Topic-Text-Indent1">The unique key appears in the table.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_uk_002.jpg" alt="creating_uk_002.jpg" style="border: none;" width="812" height="345" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">The Properties view displays the following 
+ fields used for parameterising the unique key:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Foreign 
+ Key:</b></span> Indicates whether it is a reference to a key in another table. 
+ Determines or establishes the relationship between two tables.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Description</b></span>: 
+ Description of the unique key.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Members</b></span>: 
+ To include the columns that will be part of the key. Click the button 
+ on this field <img src="images/boton_tres_puntos.jpg" alt="boton_tres_puntos.jpg" style="border: none;" width="21" height="17" border="0" /> &#160;and a window 
+ appears where the columns of the key can added, deleted and sorted.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_uk_003.jpg" alt="creating_uk_003.jpg" style="border: none;" width="559" height="372" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Name</b></span>: 
+ Name of the unique restriction.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Base 
+ Table</b></span>: Table where the unique key is included.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_uk_004.jpg" alt="creating_uk_004.jpg" style="border: none;" width="812" height="241" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1" style="font-weight: bold;">Also see</p>
+<p class="Topic-Text-Indent1"><a href="creating_a_diagram.htm">Creating 
+ a Diagram</a></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

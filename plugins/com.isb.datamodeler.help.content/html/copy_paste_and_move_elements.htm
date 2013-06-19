@@ -1,0 +1,162 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 8" />
+<title>Copy, Paste and Move Elements</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nUsing Data Modeler\nData Modeler Navigator\nCopy, Paste and Move Elements");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "Cover.htm");
+document.write("<a href=\"Cover.htm\">Data Modeler<\/a> > <a href=\"using_data_modeler.htm\">Using Data Modeler<\/a> > <a href=\"data_modeler_navigator.htm\">Data Modeler Navigator<\/a> > Copy, Paste and Move Elements<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Copy, Paste and Move Elements</h1>
+<p>From the Data Modeler Navigator, copy, paste and move tables actions 
+ can be performed. These actions are detailed below:</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Copy</b></span>: 
+ To access this option, go to the table that you want to copy, right click 
+ and select <span style="font-weight: bold;"><b>Copy</b></span>. When a single 
+ table is copied, the FKs will not be copied. If several interrelated tables 
+ are copied, the FKs with the relationship between these tables will be 
+ copied.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/copy_paste_move_elements_01.jpg" alt="copy_paste_move_elements_01.jpg" style="border: none;" width="395" height="346" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Paste</b></span>: 
+ This action will always be enabled provided that:</p>
+<p class="Topic-Text-Bulleted2">-&#160;&#160;&#160;&#160;&#160;There is 
+ some content in the clipboard.</p>
+<p class="Topic-Text-Bulleted2">-&#160;&#160;&#160;&#160;&#160;There is 
+ only one target element selected in the navigator.</p>
+<p class="Topic-Text-Bulleted2">-&#160;&#160;&#160;&#160;&#160;The element 
+ selected in the navigator is a schema.</p>
+<p class="Topic-Text-Indent1">This action also involves pasting the elements 
+ linked underneath that were copied along with the target element. When 
+ just one table is selected for copying, the FKs will not be pasted.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/copy_paste_move_elements_02.jpg" alt="copy_paste_move_elements_02.jpg" style="border: none;" width="392" height="311" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">If the element to be pasted already exists 
+ in the target, a window is displayed that can be used to change its name.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/copy_paste_move_elements_08.jpg" alt="copy_paste_move_elements_08.jpg" style="border: none;" width="478" height="172" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Move</b></span>: 
+ It will be enabled when several schemas are available in the project. 
+ If only one schema were available, it would not be possible to move the 
+ table from its current location. To access this option, go to the table 
+ or tables that you want to move, right click and select <span style="font-weight: bold;"><b>Move</b></span>.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/copy_paste_move_elements_03.jpg" alt="copy_paste_move_elements_03.jpg" style="border: none;" width="386" height="351" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">A window is displayed in which the target 
+ schema where the table will be moved must be selected. Once this is completed, 
+ click <img src="images/boton_ok.jpg" alt="boton_ok.jpg" style="border: none;" width="92" height="25" border="0" /> .</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/copy_paste_move_elements_05.jpg" alt="copy_paste_move_elements_05.jpg" style="border: none;" width="365" height="375" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">If the element to be moved already exists 
+ in the target, a window appears for changing its name.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/copy_paste_move_elements_06.jpg" alt="copy_paste_move_elements_06.jpg" style="border: none;" width="478" height="172" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">Finally, the renamed table will be displayed 
+ in the Data Modeler Navigator.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/copy_paste_move_elements_07.jpg" alt="copy_paste_move_elements_07.jpg" style="border: none;" width="278" height="290" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">The copy and move actions are also available 
+ in the Modeler Diagram. They can be located by right clicking within the 
+ <span style="font-weight: bold;"><b>Edit</b></span> option. The paste action 
+ will only be available when a schema is selected in the Data Modeler Navigator.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/copy_paste_move_elements_04.jpg" alt="copy_paste_move_elements_04.jpg" style="border: none;" width="1072" height="413" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">&#160;</p>
+<p class="Topic-Text-Bulleted2" style="font-weight: bold;">Also see</p>
+<p class="Topic-Text-Bulleted2" style="font-weight: normal;"><a href="data_modeler_navigator.htm">Data 
+ Modeler Navigator</a></p>
+<p class="Topic-Text-Bulleted2" style="font-weight: normal;">&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

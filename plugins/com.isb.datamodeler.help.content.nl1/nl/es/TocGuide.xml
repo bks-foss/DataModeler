@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Data Modeler">
+  <topic href="html/portada.htm" label="Data Modeler - BKS V3.5SP1">
+    <topic href="html/introduccion.htm" label="Introducción"/>
+    <topic href="html/como_utilizar_data_modeler.htm" label="Cómo utilizar Data Modeler">
+      <topic href="html/navegador_data_modeler.htm" label="Navegador Data Modeler">
+      	<topic href="html/copiar_pegar_mover_elementos.htm" label="Copiar, Pegar y Mover elementos"/>
+      	<topic href="html/renombrar_elementos.htm" label="Renombrar elementos"/>
+      	<topic href="html/importar_tablas.htm" label="Importar Tablas"/>
+      	<topic href="html/detectar_posibles_relaciones.htm" label="Detectar posibles Relaciones"/>
+      </topic>    
+      <topic href="html/propiedades.htm" label="Propiedades"/>
+    </topic>
+    <topic href="html/como_crear_un_proyecto_data_modeler.htm" label="Cómo crear un Proyecto Data Modeler"/>
+    <topic href="html/como_crear_un_esquema.htm" label="Cómo crear un Esquema"/>
+    <topic href="html/como_crear_un_diagrama.htm" label="Cómo crear un Diagrama">
+      <topic href="html/paleta_del_editor_de_diagrama.htm" label="Paleta del Editor de Diagrama"/>
+      <topic href="html/relaciones_del_diagrama.htm" label="Relaciones del Diagrama"/>
+    </topic>
+    <topic href="html/como_crear_una_tabla.htm" label="Cómo crear una Tabla"/>
+    <topic href="html/como_crear_una_columna.htm" label="Cómo crear una Columna"/>
+    <topic href="html/como_crear_una_clave_unica.htm" label="Cómo crear una clave única"/>
+    <topic href="html/borrado_de_elementos_y_relaciones_del_diagrama.htm" label="Borrado de Elementos y Relaciones del Diagrama">
+      <topic href="html/borrado_de_elementos_del_diagrama.htm" label="Borrado de Elementos del Diagrama"/>
+      <topic href="html/borrado_de_relaciones_del_diagrama.htm" label="Borrado de Relaciones del Diagrama"/>
+    </topic>
+    <topic href="html/validaciones_del_modelo.htm" label="Validaciones del Modelo">
+       <topic href="html/parametrizacion_de_las_validaciones.htm" label="Parametrización de las Validaciones"/>    
+    </topic> 
+    <topic href="html/comparador_de_modelos_de_datos.htm" label="Comparador de modelos de datos">
+       <topic href="html/comparacion_de_local_a_local.htm" label="Comparación de local a local"/>    
+       <topic href="html/comparacion_de_local_a_cvs.htm" label="Comparación de local a CVS"/>
+       <topic href="html/merge_para_la_importacion_del_modelo.htm" label="Merge para la importación del modelo"/>  
+    </topic> 
+    <topic href="html/glosario.htm" label="Glosario"/>
+  </topic>
+</toc>

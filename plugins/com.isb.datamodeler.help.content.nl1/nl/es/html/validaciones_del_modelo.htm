@@ -1,0 +1,157 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 8" />
+ <title>Validaciones del Modelo</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nValidaciones del Modelo");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "portada.htm");
+document.write("<a href=\"portada.htm\">Data Modeler<\/a> > Validaciones del Modelo<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Validaciones del Modelo</h1>
+<p>Data Modeler proporciona por un lado una validación automática, que 
+ comprueba la longitud máxima y caracteres inválidos de los nombres y descripciones 
+ de elementos.</p>
+<p>Por otro lado proporciona una validación manual que le ayudará a detectar 
+ incorrecciones en el modelo. Se realizan unas validaciones básicas del 
+ modelo y normativa. Se comprobará que el modelo es correcto y se informará 
+ de los errores, si los hubiera.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Pasos</p>
+<p class="Topic-Text-Numered">1. &#160;&#160;&#160;Desde el Navegador Data 
+ Modeler, sitúese en el proyecto sobre el que desea realizar la validación, 
+ haga clic en el botón derecho del ratón y seleccione <span style="font-weight: bold;"><b>Validar 
+ Modelo</b></span>.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/validaciones_modelo_01.jpg" alt="validaciones_modelo_01.jpg" style="border: none;" width="346" height="313" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Numered">2. &#160;&#160;Se realizan las validaciones 
+ básicas del modelo y de normativa. Pueden darse dos situaciones:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>No 
+ existen errores en el modelo</b></span>: Se mostrará una ventana informando 
+ de este hecho.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/validaciones_modelo_02.jpg" alt="validaciones_modelo_02.jpg" style="border: none;" width="522" height="142" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Existen 
+ errores en el modelo</b></span>: Se muestra un informe de validaciones en 
+ el que se distinguen aquellas validaciones generales de las que son específicas 
+ para modelos con bases de datos. Los mensajes mostrados se encuentran 
+ agrupados por tipo de validación (validaciones básicas y validaciones 
+ de normativa) y dentro de cada tipo se mostrarán en primer lugar los errores 
+ y después los avisos. También, cabe mencionar que los mensajes mostrados 
+ para los modelos con bases de datos, llevaran como prefijo el literal 
+ “[Diccionario de Datos]”.</p>
+<p class="Topic-Text-Indent2">Los mensajes mostrados puede seleccionarlos 
+ (utilizando la tecla Ctrl.) y además puede copiarlos haciendo clic en 
+ botón derecho y eligiendo del menú emergente la opción Copiar o mediante 
+ la combinación de teclas Ctrl.+C.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/validaciones_modelo_03.jpg" alt="validaciones_modelo_03.jpg" style="border: none;" width="844" height="394" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent2">Además, si lo considera necesario, puede 
+ exportar esta información a un fichero .html, para su posterior revisión 
+ y facilitar el envío de los resultados a quien sea necesario. Para ello, 
+ haga clic en el botón <img src="images/boton_exportar.jpg" alt="boton_exportar.jpg" style="border: none;" width="23" height="22" border="0" /> , situado 
+ en la parte superior derecha de la vista, y en la ventana emergente indique 
+ la ubicación y el nombre del fichero.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/validaciones_modelo_04.jpg" alt="validaciones_modelo_04.jpg" style="border: none;" width="625" height="480" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent2">El informe tendrá una apariencia similar 
+ a esta y contendrá además de los resultados de la validación, la fecha 
+ y hora de la validación, el proyecto validado y ubicación del repositorio 
+ correspondiente a la versión que se está validando:</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/validaciones_modelo_05.jpg" alt="validaciones_modelo_05.jpg" style="border: none;" width="1036" height="711" border="0" /></p>
+<p class="Image">&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Consulte también</p>
+<p><a href="como_utilizar_data_modeler.htm">Cómo utilizar Data Modeler</a></p>
+<p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

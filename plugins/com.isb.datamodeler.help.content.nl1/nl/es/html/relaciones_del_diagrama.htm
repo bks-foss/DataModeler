@@ -1,0 +1,306 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 8" />
+<title>Relaciones del Diagrama</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nCómo crear un Diagrama\nRelaciones del Diagrama");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "portada.htm");
+document.write("<a href=\"portada.htm\">Data Modeler<\/a> > <a href=\"como_crear_un_diagrama.htm\">Cómo crear un Diagrama<\/a> > Relaciones del Diagrama<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Relaciones del Diagrama</h1>
+<p>Las relaciones determinan cómo los datos están relacionados entre dos 
+ entidades. </p>
+<p>La selección de tipos de la relación es fundamental a la integridad 
+ de referencial construida en los modelos de los datos. </p>
+<p>Las relaciones que pueden establecerse entre tablas son:</p>
+<p class="Topic-Text-Bulleted1">• &#160;<span style="font-weight: bold;"><b>&#160;&#160;&#160;Identificativa</b></span>: 
+ Se representa mediante una línea continua. En el extremo de la relación 
+ se muestra la cardinalidad y el rol correspondiente. Las relaciones identificativas 
+ difunden la clave primaria de la entidad padre a la clave primaria del 
+ hijo. </p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_04.jpg" alt="relaciones_diagrama_04.jpg" style="border: none;" width="507" height="246" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent">Al establecerse este tipo de relación en la 
+ vista Propiedades se muestran los siguientes campos a configurar</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_01.jpg" alt="relaciones_diagrama_01.jpg" style="border: none;" width="1016" height="422" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Al 
+ actualizar</b></span>: haga clic en <img src="images/boton_flecha.jpg" alt="boton_flecha.jpg" style="border: none;" width="16" height="17" border="0" /> &#160;y 
+ en el desplegable seleccione la acción de integridad referencial que quiere 
+ utilizar cuando se actualice una fila en la tabla padre</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_02.jpg" alt="relaciones_diagrama_02.jpg" style="border: none;" width="933" height="216" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;<span style="font-weight: bold;"><b>&#160;&#160;Al 
+ eliminar</b></span>: haga clic en &#160;<img src="images/boton_flecha.jpg" alt="boton_flecha.jpg" style="border: none;" width="16" height="17" border="0" /> 
+ y en el desplegable seleccione la acción de integridad referencial que 
+ quiere utilizar cuando se actualice una fila en la tabla padre</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_03.jpg" alt="relaciones_diagrama_03.jpg" style="border: none;" width="933" height="216" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Cardinalidad 
+ base</b></span>: El origen, (tabla hija) podrá tener los siguientes valores:</p>
+<p class="Topic-Text-Bulleted3">• 0…1</p>
+<p class="Topic-Text-Bulleted3">• 0…*</p>
+<p class="Topic-Text-Bulleted3">• 1…*</p>
+<p class="Topic-Text-Bulleted3">• 1</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Cardinalidad 
+ padre</b></span>: únicamente podrá tener el valor 1.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Clave 
+ única</b></span>: campos cuyos valores identifican de forma única cada registro 
+ de la tabla (UK)</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Descripción</b></span>: 
+ puede incluir una breve descripción de la relación</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Identificativa</b></span>: 
+ valor booleano que indica si la relación es identificativa (True) o no 
+ identificativa (False)</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Miembros</b></span>: 
+ Columnas de la tabla hija que forman parte la restricción. Si incluye 
+ columnas con una relación Identificativa, esta pasa a ser no identificativa 
+ (Valor identificador = False)</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Miembros 
+ referenciados</b></span>: Columnas que forman la restricción única</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Nombre</b></span>: 
+ Nombre de la relación. Data Modeler indica un valor por defecto que no 
+ puede ser modificado.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Rol 
+ Base: </b></span>representa el papel que juega la tabla hija en la relación. 
+ Por ejemplo, en una relación entre la tabla Empleado (hija) y Empresa 
+ (padre), podría ser “trabaja en”.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Rol 
+ Padre: </b></span>representa el papel que juega la tabla padre en la relación. 
+ Por ejemplo, en una relación entre la tabla Empleado (hija) y Empresa 
+ (padre), podría ser “emplea a”.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Tabla 
+ Base</b></span>: Nombre de la tabla desde la que se origina la relación</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Tabla 
+ Padre</b></span>: Nombre de la tabla destino de la relación &#160;</p>
+<p class="Topic-Text-Bulleted2">&#160;</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;<span style="font-weight: bold;"><b>&#160;&#160;<img src="images/boton_no_identificativa.jpg" alt="boton_no_identificativa.jpg" style="border: none;" width="111" height="20" border="0" /> </b></span>: Se representa mediante 
+ una línea discontinua. En el extremo de la relación se muestra la cardinalidad 
+ y el rol correspondiente. </p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_05.jpg" alt="relaciones_diagrama_05.jpg" style="border: none;" width="490" height="257" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">Al establecerse este tipo de relación en 
+ la vista Propiedades se muestran los siguientes campos a configurar:</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_06.jpg" alt="relaciones_diagrama_06.jpg" style="border: none;" width="933" height="406" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Al 
+ actualizar</b></span>: haga clic en <img src="images/boton_flecha.jpg" alt="boton_flecha.jpg" style="border: none;" width="16" height="17" border="0" /> &#160;y 
+ en el desplegable seleccione la acción de integridad referencial que quiere 
+ utilizar cuando se actualice una fila en la tabla padre</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_07.jpg" alt="relaciones_diagrama_07.jpg" style="border: none;" width="933" height="250" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;<span style="font-weight: bold;"><b>&#160;&#160;Al 
+ eliminar</b></span>: haga clic en &#160;<img src="images/boton_flecha.jpg" alt="boton_flecha.jpg" style="border: none;" width="16" height="17" border="0" /> 
+ y en el desplegable seleccione la acción de integridad referencial que 
+ quiere utilizar cuando se actualice una fila en la tabla padre</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_08.jpg" alt="relaciones_diagrama_08.jpg" style="border: none;" width="933" height="250" border="0" /></p>
+<p class="Topic-Text-Indent1">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Cardinalidad 
+ base</b></span>: El origen, (tabla hija) podrá tener los siguientes valores:</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;0…1</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;0…*</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;1…*</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;1</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Cardinalidad 
+ padre</b></span>: Podrá tener los valores:</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;0…1</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;1</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Clave 
+ única</b></span>: campos cuyos valores identifican de forma única cada registro 
+ de la tabla (UK)</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Identificativa</b></span>: 
+ valor booleano que indica si la relación es identificativa (True) o no 
+ identificativa (False)</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Miembros</b></span>: 
+ Columnas de la tabla hija que forman parte la restricción. </p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Miembros 
+ referenciados</b></span>: columnas que forman la restricción única</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Nombre</b></span>: 
+ Nombre de la relación. Data Modeler indica un valor por defecto que no 
+ puede ser modificado.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Rol 
+ Base: </b></span>representa el papel que juega la tabla hija en la relación. 
+ Por ejemplo, en una relación entre la tabla Empleado (hija) y Empresa 
+ (padre), podría ser “trabaja en”.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Rol 
+ Padre: </b></span>representa el papel que juega la tabla padre en la relación. 
+ Por ejemplo, en una relación entre la tabla Empleado (hija) y Empresa 
+ (padre), podría ser “emplea a”.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Tabla 
+ Base</b></span>: Nombre de la tabla desde la que se origina la relación</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Tabla 
+ Padre</b></span>: Nombre de la tabla destino de la relación &#160;</p>
+<p class="Topic-Text-Indent1">&#160;</p>
+<p>Al crear una relación nueva se mostrará un asistente en el caso de que 
+ :</p>
+<p class="Topic-Text-Bulleted">• &#160;&#160;&#160;&#160;&#160;las columnas 
+ miembro ya existan en la tabla hija aunque no coincidan en el nombre</p>
+<p class="Topic-Text-Bulleted">• &#160;&#160;&#160;&#160;&#160;la tabla 
+ padre tenga varias claves</p>
+<p>Se mostrará el nombre de las columnas miembro de cada clave para que 
+ podamos definir la lista de columnas miembro de la relación, eligiendo 
+ entre las columnas de la tabla hija que tengan el tipo correspondiente 
+ o añadir una columna nueva a partir de las columnas de la clave referenciada.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_09.jpg" style="border: none;" alt="relaciones_diagrama_09.jpg" width="814" height="387" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: normal;">Este asistente muestra en la parte izquierda 
+ columnas de la tabla hija y en la parte derecha las columnas de la clave 
+ referenciada. En la parte central encontramos la sección <span style="font-weight: bold;"><b>Miembros</b></span> 
+ que ha de albergar tantas columnas miembro como miembros referenciados 
+ de la FK tengamos. En esta sección podremos incluir tanto columnas de 
+ la lista de &#160;miembros referenciados como de la tabla hija.</p>
+<p style="font-weight: normal;">Este asistente realiza una serie de validaciones 
+ para permitir incluir en la sección <span style="font-weight: bold;"><b>Miembros</b></span> 
+ las columnas. Estas validaciones son:</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;Que coincida 
+ el número de columnas miembro con el número de columnas referenciadas</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;Que coincida 
+ el tipo de cada columna miembro con la columna referenciada correspondiente</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;Que la columna miembro 
+ nueva no &#160;tenga el mismo nombre que otra nueva o alguna ya existente 
+ en la tabla</p>
+<p style="font-weight: normal;">&#160;</p>
+<p style="font-weight: normal;">La sección<span style="font-weight: bold;"><b> 
+ Miembros</b></span> puede completarse de varias formas: </p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;Si la columna 
+ que queremos incluir como miembro se encuentra ya creada en la tabla hija, 
+ podemos utilizar esta columna y no incluir una nueva. Para ello debemos 
+ seleccionar la columna en la lista de la izquierda y hacer clic en el 
+ botón &#160;<img src="images/boton_anadir.jpg" style="border: none;" alt="boton_anadir.jpg" width="55" height="25" border="0" /> . La columna se mostrará 
+ en la sección <span style="font-weight: bold;"><b>Miembros</b></span></p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_10.jpg" style="border: none;" alt="relaciones_diagrama_10.jpg" width="798" height="380" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted">• &#160;&#160;&#160;&#160;&#160;En el caso 
+ de que quisiéramos incluirlo desde la lista de la derecha que contiene 
+ los elementos referenciados de la clave ajena, &#160;lo que haríamos sería 
+ seleccionarla y hacer clic en <img src="images/boton_copiar.jpg" style="border: none;" alt="boton_copiar.jpg" width="95" height="25" border="0" /> 
+ &#160;o en &#160;&#160;si queremos copiar todas las columnas. En este 
+ caso, además de incluirse en la sección Miembros también se crearía en 
+ la lista de la tabla hija.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_11.jpg" style="border: none;" alt="relaciones_diagrama_11.jpg" width="789" height="376" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">&#160;</p>
+<p style="font-weight: normal;">La columna añadida se distinguirá visualmente 
+ de las ya existentes en la tabla hija con el icono <img src="images/relaciones_diagrama_13.jpg" style="border: none;" alt="relaciones_diagrama_13.jpg" width="15" height="18" border="0" /> 
+ </p>
+<p style="font-weight: normal;">Al añadir una columna nueva a partir de 
+ una columna referenciada, se comprobará si existe una con el mismo nombre 
+ en la tabla hija, usando , en caso necesario, un sufijo numérico para 
+ evitar colisiones de nombres.</p>
+<p class="Image">&#160;</p>
+<p class="Image">&#160;<img src="images/relaciones_diagrama_12.jpg" style="border: none;" alt="relaciones_diagrama_12.jpg" width="165" height="54" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: normal;">Añada tantas columnas como sean necesarias 
+ para que el número de columnas miembro y miembro referenciado de la Clave 
+ Ajena coincidan. </p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_diagrama_14.jpg" style="border: none;" alt="relaciones_diagrama_14.jpg" width="797" height="388" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: normal;">En el caso de que el orden de los miembros 
+ no coincida con la de miembros referenciados utilice los botones <img src="images/boton_subir.jpg" style="border: none;" alt="boton_subir.jpg" width="55" height="25" border="0" /> &#160;y &#160;&#160;<img src="images/boton_bajar.jpg" style="border: none;" alt="boton_bajar.jpg" width="55" height="25" border="0" /> para ordenarlos, 
+ ya que sino el botón &#160;<img src="images/boton_aceptar.jpg" style="border: none;" alt="boton_aceptar.jpg" width="92" height="25" border="0" /> 
+ no estará habilitado.</p>
+<p style="font-weight: normal;">Haga clic en &#160;<img src="images/boton_aceptar.jpg" style="border: none;" alt="boton_aceptar.jpg" width="92" height="25" border="0" /> 
+ para terminar el proceso.</p>
+<p style="font-weight: bold;">&#160;</p>
+<p style="font-weight: bold;">&#160;</p>
+<p style="font-weight: bold;">Consulte también</p>
+<p><a href="como_crear_un_diagrama.htm">Cómo crear un Diagrama</a></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %Bundle-Vendor
+Fragment-Host: com.isb.datamodeler.help.content;bundle-version="2.0.1"
+Bundle-Version: 2.0.1
+Bundle-Name: %Bundle-Name
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.help.content.nl1
+

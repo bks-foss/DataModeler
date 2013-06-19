@@ -1,0 +1,139 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 8" />
+<title>Cómo crear una clave única</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nCómo crear una clave única");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "portada.htm");
+document.write("<a href=\"portada.htm\">Data Modeler<\/a> > Cómo crear una clave única<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Cómo crear una clave única</h1>
+<p>Cada tabla puede tener uno o más campos cuyos valores identifican de 
+ forma única cada registro de dicha tabla (UK). Es decir, no pueden existir 
+ dos o más registros diferentes cuyos valores en dicho campos sean idénticos. 
+ Pueden existir varias claves únicas en una tabla.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/como_crear_una_clave_unica_01.jpg" alt="como_crear_una_clave_unica_01.jpg" style="border: none;" width="237" height="178" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">Pasos</p>
+<p>&#160;</p>
+<p class="Topic-Text-Numered">1. &#160;&#160;Para incluir una Clave Única 
+ dentro de una tabla tiene varias opciones:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;En el Navegador 
+ Data Modeler, situado en la tabla donde desee crear la columna, haga clic 
+ en el botón derecho del ratón, y en el menú emergente, seleccione <span 
+	 style="font-weight: bold;"><b>Nuevo&gt;Clave única</b></span></p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;En la paleta 
+ del editor, haga clic en el elemento &#160;<img src="images/boton_clave_unica.jpg" alt="boton_clave_unica.jpg" style="border: none;" width="110" height="20" border="0" /> sitúese 
+ &#160;en la tabla donde desee crear la clave única y haga clic de nuevo.</p>
+<p class="Topic-Text-Indent">La clave única se muestra dentro de la tabla.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/como_crear_una_clave_unica_02.jpg" alt="como_crear_una_clave_unica_02.jpg" style="border: none;" width="693" height="361" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent">En la vista Propiedades, se muestran los siguientes 
+ campos que permiten parametrizar la clave única:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>Descripción</b></span>: 
+ Descripción de la clave única.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Miembros</b></span>: 
+ Permite incluir las columnas que van a formar parte &#160;de la clave. 
+ Al hacer clic este campo, mediante el botón <img src="images/boton_tres_puntos.jpg" alt="boton_tres_puntos.jpg" style="border: none;" width="21" height="17" border="0" /> , aparece 
+ una ventana desde la puede añadir o eliminar columnas de la clave, así 
+ como ordenarlas.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/como_crear_una_clave_unica_03.jpg" alt="como_crear_una_clave_unica_03.jpg" style="border: none;" width="559" height="405" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Nombre</b></span>: 
+ Nombre de la Restricción única</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Tabla 
+ Base</b></span>: Tabla en la que está incluida la clave única</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/como_crear_una_clave_unica_04.jpg" alt="como_crear_una_clave_unica_04.jpg" style="border: none;" width="893" height="252" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">Consulte también</p>
+<p><a href="como_crear_un_diagrama.htm">Cómo crear un Diagrama</a></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

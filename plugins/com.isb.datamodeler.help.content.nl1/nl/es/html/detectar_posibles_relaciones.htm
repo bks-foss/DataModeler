@@ -1,0 +1,160 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 8" />
+<title>Detectar posibles Relaciones</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nCómo utilizar Data Modeler\nNavegador Data Modeler\nDetectar posibles Relaciones");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "portada.htm");
+document.write("<a href=\"portada.htm\">Data Modeler<\/a> > <a href=\"como_utilizar_data_modeler.htm\">Cómo utilizar Data Modeler<\/a> > <a href=\"navegador_data_modeler.htm\">Navegador Data Modeler<\/a> > Detectar posibles Relaciones<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Detectar posibles Relaciones</h1>
+<p><span style="font-weight: bold;"><b>Finalidad</b></span></p>
+<p>Data Modeler permite detectar posibles relaciones (entrantes y salientes) 
+ entre las tablas que pertenecen a la aplicación del proyecto y otras tablas 
+ del modelo.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Pasos</p>
+<p class="Topic-Text-Numered">1. &#160;&#160;Sitúese en el Navegador Data 
+ Modeler o en Editor de diagrama sobre la tabla o tablas desde las que 
+ se quiera detectar posibles relaciones. Haga clic en el botón derecho 
+ del ratón y en el menú emergente seleccione una de las siguientes opciones:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;</b></span><span 
+	 style="font-weight: bold;"><b>Detectar posibles relaciones entrantes</b></span>: 
+ Data Modeler detectará, para cada tabla seleccionada, grupos de columnas 
+ que pueden ser referenciadas desde otras tablas.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;<span style="font-weight: bold;"><b>&#160;Detectar 
+ posibles relaciones salientes</b></span>: Data Modeler detectará, para cada 
+ tabla seleccionada, grupos de columnas que pueden ser referencias a claves 
+ de otras tablas (tanto de la aplicación como externas)</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/detectar_posibles_relaciones_01.jpg" alt="detectar_posibles_relaciones_01.jpg" style="border: none;" width="389" height="370" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Numered">2. &#160;&#160;Aparece una ventana que muestra 
+ las columnas que pueden ser referencias a claves de otras tablas tanto 
+ de la aplicación como externas. Las columnas mostradas deben cumplir lo 
+ siguiente:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;Que su nombre 
+ coincida o empiece por el nombre de la columna de la posible clave referenciada.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;Que su tipo y 
+ parámetros coincidan con el de la columna de la posible clave referenciada.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;Que al menos 
+ alguna columna no debe pertenecer ya a una FK.</p>
+<p class="Topic-Text-Indent1">&#160;</p>
+<p class="Topic-Text-Indent1">La información que se muestra por cada tabla 
+ del esquema que contiene posibles relaciones detectadas es la siguiente:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Tabla 
+ Hija/ Columnas Sugeridas</b></span>: Columnas de la tabla hija sugeridas para 
+ la relación.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Tabla 
+ Padre. Columnas Clave</b></span>: Nombre de la tabla padre y Columnas que 
+ forman la clave única sugerida.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;<span style="font-weight: bold;"><b>&#160;&#160;&#160;Select</b></span>: 
+ Casilla de verificación que permite seleccionar las relaciones que desea 
+ establecerse.</p>
+<p class="Topic-Text-Indent1">Por último, haga clic en el botón <img src="images/boton_aceptar.jpg" alt="boton_aceptar.jpg" style="border: none;" width="92" height="25" border="0" />.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/detectar_posibles_relaciones_02.jpg" alt="detectar_posibles_relaciones_02.jpg" style="border: none;" width="900" height="349" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">Las relaciones seleccionadas se mostrarán 
+ en su tabla correspondiente dentro del diagrama de modelado. Si la acción 
+ se ha ejecutado desde el diagrama, y las tablas que participan en la relación 
+ están en el diagrama, la relación se pintará automáticamente. En caso 
+ contrario, para poder visualizar una relación de una tabla, sitúese sobre 
+ ella y haga clic en el botón derecho del ratón y seleccione la opción 
+ <span style="font-weight: bold;"><b>Restaurar enlaces</b></span>. Las relaciones 
+ se añaden a la tabla como FK (Foreing Keys). Para cada tabla que desee 
+ mostrar sus relaciones debe realizar esta acción.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/detectar_posibles_relaciones_03.jpg" alt="detectar_posibles_relaciones_03.jpg" style="border: none;" width="778" height="370" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">&#160;</p>
+<p style="font-weight: bold;">Consulte también</p>
+<p><a href="navegador_data_modeler.htm">Navegador Data Modeler</a></p>
+<p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

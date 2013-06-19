@@ -1,0 +1,204 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 8" />
+<title>Import Tables</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nUsing Data Modeler\nData Modeler Navigator\nImport Tables");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "Cover.htm");
+document.write("<a href=\"Cover.htm\">Data Modeler<\/a> > <a href=\"using_data_modeler.htm\">Using Data Modeler<\/a> > <a href=\"data_modeler_navigator.htm\">Data Modeler Navigator<\/a> > Import Tables<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Import Tables</h1>
+<p style="font-weight: bold;">Purpose</p>
+<p>Data Modeler can be used to import tables from the repository of the 
+ data dictionary.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Steps</p>
+<p class="Topic-Text-Numered">1. &#160;&#160;&#160;In the Data Modeler 
+ Navigator, go to the modelling project where the tables will be imported, 
+ right click and, in the popup menu, select the <span style="font-weight: bold;"><b>Import 
+ Tables</b></span> option.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/import_tables_01.jpg" alt="import_tables_01.jpg" style="border: none;" width="410" height="299" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Numered">2. &#160;&#160;&#160;A wizard appears to 
+ guide you through the table import process. At least one of the following 
+ fields must be completed:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>SubApplication</b></span>: 
+ Type the subapplication code from which to import the tables. The default 
+ value of this field is the subapplication code of the selected modelling 
+ project.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Entity 
+ Name</b></span>: Name of the table(s) to be imported. ‘*’ can be used as wildcard 
+ for n characters or ‘_’ for just 1 character. &#160;At least 3 characters 
+ (apart from * or _) need to be added in order for the search to be valid.</p>
+<p class="Topic-Text-Bulleted2">Once the validations performed by the tool 
+ are fulfilled, the &#160;<img src="images/boton_next.jpg" alt="boton_next.jpg" style="border: none;" width="92" height="25" border="0" /> button 
+ will be enabled.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/import_tables_02.jpg" alt="import_tables_02.jpg" style="border: none;" width="566" height="337" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">The wizard window displays a list of the 
+ tables that fulfil the search requirements and which have been located 
+ in the data dictionary repository. &#160;The information displayed for 
+ each table is the following:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Name</b></span>: 
+ Corresponds to the name of the table.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Modelled</b></span>: 
+ Indicates whether or not the entity is in our model.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>CheckOut</b></span>: 
+ Indicates whether the entity has been checked out in the dictionary.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Subapplication</b></span>: 
+ Subapplication to which the table belongs.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Schema</b></span>: 
+ Displays the name of the schema where the table is located. If the dictionary 
+ table contains information on the schema to which it belongs, this information 
+ will be displayed. If the table is included in any of the schemas of the 
+ model subapplication, the information on that schema will be displayed.</p>
+<p class="Topic-Text-Indent1" style="font-weight: normal;"><span style="font-weight: normal;">Select 
+ the entities to be imported by using the checkbox located next to the 
+ name. Entities from different subapplications cannot be selected for being 
+ imported at the same time.</span></p>
+<p class="Topic-Text-Indent1" style="font-weight: normal;">The window displays 
+ the <span style="font-weight: bold;"><b>Default Schema</b></span> field to add 
+ the name of the schema where the tables will be downloaded. This field 
+ will be used if no value appears in the <span style="font-weight: bold;"><b>Schema</b></span> 
+ column, using the value of this field for the schema.</p>
+<p class="Topic-Text-Indent1">Click <img src="images/boton_next.jpg" alt="boton_next.jpg" style="border: none;" width="92" height="25" border="0" />.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/import_tables_03.jpg" alt="import_tables_03.jpg" style="border: none;" width="635" height="682" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">The wizard displays the <span style="font-weight: bold;"><b>Model 
+ Merg</b></span>e window split in two sections:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;The top section 
+ contains the differences between the repository and the local project. 
+ </p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;The lower section is 
+ split up into two parts. The right part contains the tables (and all of 
+ its associated elements, except for information on FK restrictions) that 
+ were selected to be imported and the left part contains all the tables 
+ from the model. </p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/import_tables_04.jpg" alt="import_tables_04.jpg" style="border: none;" width="727" height="682" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">In addition, each of the parts contains the<span 
+	 style="font-weight: bold;"><b> Differences</b></span> and <span style="font-weight: bold;"><b>Properties</b></span> 
+ tabs where, depending on the currently active tab, different information 
+ can be viewed.</p>
+<p class="Topic-Text-Indent1" style="font-weight: bold;">Differences Tab</p>
+<p class="Topic-Text-Indent1">&#160;</p>
+<p class="Topic-Text-Indent1"><img src="images/import_tables_05.jpg" alt="import_tables_05.jpg" style="border: none;" width="859" height="198" border="0" /></p>
+<p class="Topic-Text-Indent1">&#160;</p>
+<p class="Topic-Text-Indent1" style="font-weight: bold;">Properties Tab</p>
+<p class="Topic-Text-Indent1">&#160;</p>
+<p class="Topic-Text-Indent1"><img src="images/import_tables_06.jpg" alt="import_tables_06.jpg" style="border: none;" width="936" height="237" border="0" /></p>
+<p class="Topic-Text-Indent1">&#160;</p>
+<p class="Topic-Text-Indent1">Copy the selected tables using the buttons 
+ located at the top of the wizard (<img src="images/boton_fusionar_002.jpg" alt="boton_fusionar_002.jpg" style="border: none;" width="23" height="20" border="0" /><img src="images/boton_fusionar_004.jpg" alt="boton_fusionar_004.jpg" style="border: none;" width="23" height="20" border="0" /> ). For more information on how to perform 
+ this, see: <a href="merge_for_model_import.htm">Merge for Model Import</a> 
+ </p>
+<p class="Topic-Text-Indent1">Click <img src="images/boton_finish.jpg" alt="boton_finish.jpg" style="border: none;" width="92" height="25" border="0" /> &#160;to 
+ finish the process. If the copy buttons are not used (<img src="images/boton_fusionar_002.jpg" alt="boton_fusionar_002.jpg" style="border: none;" width="23" height="20" border="0" /><img src="images/boton_fusionar_004.jpg" alt="boton_fusionar_004.jpg" style="border: none;" width="23" height="20" border="0" /> ) and the wizard is finished without merging, 
+ a message informing that no change has been actually performed will be 
+ displayed, providing the option of returning to the previous window for 
+ performing the merge or closing the wizard.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/import_tables_07.jpg" alt="import_tables_07.jpg" style="border: none;" width="522" height="142" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">Once the wizard is finished, the imported 
+ tables will appear within the modelling project. Those from different 
+ subapplications will appear with their name between the greater than and 
+ less than symbols (&lt;&lt; &#160;&gt;&gt;).</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/import_tables_08.jpg" alt="import_tables_08.jpg" style="border: none;" width="283" height="310" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">&#160;</p>
+<p style="font-weight: bold;">Also see</p>
+<p><a href="data_modeler_navigator.htm">Data Modeler Navigator</a></p>
+<p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

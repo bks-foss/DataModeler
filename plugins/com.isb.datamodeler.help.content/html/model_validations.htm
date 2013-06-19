@@ -1,0 +1,154 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 8" />
+<title>Model Validations</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nModel Validations");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "cover.htm");
+document.write("<a href=\"cover.htm\">Data Modeler<\/a> > Model Validations<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Model Validations</h1>
+<p>Data Modeler provides, on one hand, automatic validation, which checks 
+ maximum length and invalid characters in names and descriptors of elements.</p>
+<p>On the other hand, it also provides manual validation, which helps to 
+ detect errors in the model. Basic validations of the model and the guidelines 
+ are performed. A check will be run to ensure the model is correct and 
+ to report any errors that may occur.</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Steps</p>
+<p>&#160;</p>
+<p>1. &#160;&#160;From the Data Modeler Navigator, right click the project 
+ where the validation needs to be run and then select<span style="font-weight: bold;"><b> 
+ Validate Model</b></span>.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/model_validations_001.jpg" alt="model_validations_001.jpg" style="border: none;" width="365" height="313" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Numered">2. &#160;&#160;Basic validations of the model 
+ and the guidelines are performed. Two different scenarios may occur:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;No errors 
+ exist in the model: A window will appear to report this fact.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/model_validations_002.jpg" alt="model_validation_002.jpg" style="border: none;" width="522" height="142" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Errors 
+ exist in the model</b></span>: A validation report is displayed in which general 
+ validations are distinguished from specific validations for models with 
+ databases. The messages displayed are grouped by validation type (basic 
+ validation and guideline validation) and within each type errors will 
+ first be displayed and, then, warnings. The messages displayed for models 
+ with databases include the literal &quot;<span style="font-weight: bold;"><b>[Data 
+ Dictionary]</b></span>&quot; (&quot;<span style="font-weight: bold;"><b>[Diccionario 
+ de Datos</b></span>]&quot;) as prefix.</p>
+<p class="Topic-Text-Indent2">The messages displayed may be selected (using 
+ the CTRL key) and may also be copied by right clicking and selecting <span 
+	 style="font-weight: bold;"><b>Copy</b></span> &#160;from the popup menu or 
+ using the CTRL+C keys.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/model_validations_003.jpg" alt="model_validations_003.jpg" style="border: none;" width="769" height="328" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent2">This information can also be exported to 
+ an .html file so that it can be reviewed afterwards and in order to more 
+ easily send the results to the interested party. In order to do this, 
+ click <img src="images/boton_exportar.jpg" alt="boton_exportar.jpg" style="border: none;" width="23" height="22" border="0" /> , located at the top, 
+ right-hand side of the view and then specify the location and the file 
+ name in the popup window.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/model_validations_004.jpg" alt="model_validations_004.jpg" style="border: none;" width="625" height="500" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent2">The report will look similar to this and, 
+ in addition to the validation results, it will include the date and time 
+ of validation, the validated project and the location of the repository 
+ for the version being validated:</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/model_validations_005.jpg" alt="model_validations_005.jpg" style="border: none;" width="890" height="645" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">&#160;</p>
+<p style="font-weight: bold;">Also see</p>
+<p><a href="using_data_modeler.htm">Using Data Modeler</a></p>
+<p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

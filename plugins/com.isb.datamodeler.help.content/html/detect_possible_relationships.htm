@@ -1,0 +1,155 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 8" />
+<title>Detect Possible Relationships</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nUsing Data Modeler\nData Modeler Navigator\nDetect Possible Relationships");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "Cover.htm");
+document.write("<a href=\"Cover.htm\">Data Modeler<\/a> > <a href=\"using_data_modeler.htm\">Using Data Modeler<\/a> > <a href=\"data_modeler_navigator.htm\">Data Modeler Navigator<\/a> > Detect Possible Relationships<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Detect Possible Relationships</h1>
+<p style="font-weight: bold;">Purpose</p>
+<p>Data Modeler can be used to detect possible relationships between the 
+ tables that belong to the project application and other model tables.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Steps</p>
+<p class="Topic-Text-Numered">1. &#160;&#160;&#160;In the Data Modeler 
+ Navigator or Diagram Editor, position your cursor over the table(s) from 
+ which possible relationships must be detected. Right click and in the 
+ popup menu, select one of the following options:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Detect 
+ Possible Incoming Relationships</b></span>: Data Modeler will detect for each 
+ selected table, groups of columns that can be referenced from other tables.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Detect 
+ Possible Outgoing Relationships</b></span>: The Data Modeler will detect for 
+ each selected table, groups of columns that can be referenced to keys 
+ from other tables (from both the application and external tables) </p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/detect_possible_relationships_01.jpg" alt="detect_possible_relationships_01.jpg" style="border: none;" width="397" height="369" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Numered">2. &#160;&#160;&#160;A window appears displaying 
+ the columns that can be references to keys in other application tables 
+ and external tables. The columns displayed must fulfil the following:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;Its name matches 
+ or starts with the column name of the possible referenced key.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;Its type and 
+ parameters match those in the column of the possible referenced key.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;At least one 
+ of the columns must not already belong to a FK.</p>
+<p class="Topic-Text-Bulleted2">&#160;</p>
+<p class="Topic-Text-Bulleted2">The information displayed for each table 
+ of the schema that contains possible detected relationships is as follows:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;Child Table 
+ / Suggested Columns: Suggested columns of the child table for the relationship.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;Parent 
+ Table. Key Columns: Name of the parent table and Columns making up the 
+ suggested unique key.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;Select: 
+ Checkbox used for selecting the relationships that must be established.</p>
+<p class="Topic-Text-Indent1">Click <img src="images/boton_ok.jpg" alt="boton_ok.jpg" style="border: none;" width="92" height="25" border="0" />.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/detect_possible_relationships_02.jpg" alt="detect_possible_relationships_02.jpg" style="border: none;" width="900" height="332" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">The selected relationships will appear in 
+ their corresponding table within the modeler diagram. If the action was 
+ executed from the diagram and the tables that take part in the relationship 
+ are included in the diagram, the relationship will be automatically drawn. 
+ Otherwise, to view one of the relationships of a table, position your 
+ cursor over the desired table, right click and select the <span style="font-weight: bold;"><b>Restore 
+ Links</b></span> option. The relationships are added to the table as FKs (Foreign 
+ Keys). Repeat this action for each table whose relationships you wish 
+ to display</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/detect_possible_relationships_03.jpg" alt="detect_possible_relationships_03.jpg" style="border: none;" width="765" height="382" border="0" /></p>
+<p class="Image">&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Also see</p>
+<p><a href="data_modeler_navigator.htm">Data Modeler Navigator</a></p>
+<p>&#160;</p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

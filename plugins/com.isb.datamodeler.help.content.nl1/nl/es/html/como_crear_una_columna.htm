@@ -1,0 +1,147 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 8" />
+ <title>Cómo crear una columna</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nCómo crear una columna");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "portada.htm");
+document.write("<a href=\"portada.htm\">Data Modeler<\/a> > Cómo crear una columna<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Cómo crear una columna</h1>
+<p>Una columna es un componente de una tabla a la cual se le asigna un 
+ nombre, un tipo de dato y un valor por defecto. Dependiendo del tipo de 
+ datos asignado a la columna, se mostrarán más o menos atributos para completar.</p>
+<p>Las columnas se definen en las tablas.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/como_crear_una_columna_01.jpg" alt="como_crear_una_columna_01.jpg" style="border: none;" width="239" height="184" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">Pasos</p>
+<p style="font-weight: bold;">&#160;</p>
+<p class="Topic-Text-Numered">1. Para incluir una columna dentro de una 
+ tabla tiene varias opciones:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;En el Navegador 
+ Data Modeler, situado en la tabla donde desee crear la columna haga clic 
+ en el botón derecho del ratón, y en el menú emergente, seleccione<span 
+	 style="font-weight: bold;"><b> Nuevo&gt;Columna</b></span></p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;En la paleta 
+ del editor, haga clic en el elemento <img src="images/boton_columna.jpg" alt="boton_columna.jpg" style="border: none;" width="97" height="20" border="0" /> 
+ &#160;sitúese &#160;en la tabla donde desee crear la columna y haga clic 
+ de nuevo.</p>
+<p class="Topic-Text-Indent">La columna se muestra dentro de la tabla.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/como_crear_una_columna_02.jpg" alt="como_crear_una_columna_02.jpg" style="border: none;" width="741" height="325" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Numered">2. En la vista Propiedades, se muestran los 
+ siguientes campos que permiten parametrizar la columna:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Anulable</b></span>: 
+ Valor booleano que indica si puede contener un valor nulo (False) o no 
+ (True)</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>Clave 
+ Primaria</b></span>: Valor booleano que indica si la columna representa la 
+ clave primaria de la tabla. Estas columnas no pueden ser anulables, por 
+ lo que si su valor es true, el valor del campo Anulable será true también.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Descripción</b></span>: 
+ Descripción de la columna.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Nombre</b></span>: 
+ Nombre identificativo de la columna</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Parte 
+ de clave ajena</b></span>: Indica a modo informativo si la columna es una 
+ referencia a una clave en otra tabla. Determina o establece la relación 
+ existente en dos tablas.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Tipo 
+ Primitivo</b></span>: Desplegable en el que puede seleccionar los tipos de 
+ datos predefinidos para cada base de datos</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Valor 
+ por defecto</b></span>: Valor por defecto</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/como_crear_una_columna_03.jpg" alt="como_crear_una_columna_03.jpg" style="border: none;" width="741" height="257" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2" style="font-weight: bold;">Consulte también</p>
+<p class="Topic-Text-Bulleted2"><a href="como_crear_un_diagrama.htm">Cómo 
+ crear un Diagrama</a></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

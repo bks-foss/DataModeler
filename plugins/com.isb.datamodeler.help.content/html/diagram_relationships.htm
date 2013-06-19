@@ -1,0 +1,310 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 8" />
+<title>Diagram Relationships</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nCreating a Diagram\nDiagram Relationships");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "Cover.htm");
+document.write("<a href=\"Cover.htm\">Data Modeler<\/a> > <a href=\"creating_a_diagram.htm\">Creating a Diagram<\/a> > Diagram Relationships<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Diagram Relationships</h1>
+<p>Relationships determine how data between two entities are related. </p>
+<p>The selection of relationship types is essential for the built-in referential 
+ integrity of the data models. </p>
+<p>The following relationships can be established between tables: </p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;<img src="images/diagram_editor_palette_004.jpg" alt="diagram_editor_palette_004.jpg" style="border: none;" width="111" height="20" border="0" /> 
+ : It is represented by a solid line. The cardinality and the corresponding 
+ role are displayed at the end of the relationship. &#160;Identificatory 
+ relationships transmit the primary key of the parent entity to the primary 
+ key of the child entity. </p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_del_diagrama_001.jpg" alt="relaciones_del_diagrama_001.jpg" style="border: none;" width="507" height="246" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">When this type of relationship is established 
+ in the Properties view, the following fields are displayed for configuration</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/diagram_relationships_001.jpg" alt="diagram_relationships_001.jpg" style="border: none;" width="904" height="425" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">- &#160;&#160;<span style="font-weight: bold;"><b>Base 
+ Cardinality</b></span>: The source (child table) can contain the following 
+ values:</p>
+<p class="Topic-Text-Bulleted3">• 0…1</p>
+<p class="Topic-Text-Bulleted3">• 0…*</p>
+<p class="Topic-Text-Bulleted3">• 1…*</p>
+<p class="Topic-Text-Bulleted3">• 1</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>Base 
+ Role</b></span>: represents the role played by the child table in the relationship. 
+ For example, in a relationship between the Employee table (child) and 
+ the Company table (parent), it could be 'works for'.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Base 
+ Table</b></span>: name of the table from which the relationship originates.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Description</b></span>: 
+ To include a brief description on the relationship.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Identificatory</b></span>: 
+ Boolean value indicating whether the relationship is identificatory (true) 
+ or not identificatory (False).</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Members</b></span>: 
+ Columns in the child table that are part of the restriction. If columns 
+ with an Identificatory relationship are included, this relationship becomes 
+ not identificatory (ID value = False).</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Name</b></span>: 
+ Name of the relationship. Data Modeler indicates a default value that 
+ cannot be modified.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Parent 
+ Cardinality</b></span>: only the value of 1 is possible in this case.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Parent 
+ Role</b></span>: represents the role played by the parent table in the relationship. 
+ For example, in a relationship between the Employee table (child) and 
+ the Company table (parent), it could be 'employs'.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Parent 
+ Table</b></span>: name of the target relationship table. &#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Referenced 
+ Members</b></span>: columns making up the unique restriction.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Unique 
+ Key</b></span>: the values of these fields uniquely identify each record in 
+ the table (UK). </p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Unique 
+ Restriction</b></span>: unique restriction (PK or UK) belonging to the parent 
+ table to which the child table is referencing through the FK.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>When 
+ Deleted</b></span>: Click <img src="images/boton_flecha.jpg" alt="boton_flecha.jpg" style="border: none;" width="16" height="20" border="0" /> &#160;and 
+ in the combo list, select the referential integrity action to be used 
+ when a row is updated in the parent table.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/diagram_relationships_002.jpg" alt="diagram_relationships_002.jpg" style="border: none;" width="904" height="287" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>When 
+ Updated</b></span>: Click &#160;<img src="images/boton_flecha.jpg" alt="boton_flecha.jpg" style="border: none;" width="16" height="20" border="0" /> and in the combo list, 
+ select the referential integrity action to be used when a row is updated 
+ in the parent table.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/diagram_relationships_003.jpg" alt="diagram_relationships_003.jpg" style="border: none;" width="904" height="260" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Not 
+ Identificatory</b></span>: It is represented by a broken line. The cardinality 
+ and the corresponding role are displayed at the end of the relationship. 
+ &#160;</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/relaciones_del_diagrama_005.jpg" alt="relaciones_del_diagrama_005.jpg" style="border: none;" width="490" height="257" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent">When this type of relationship is established 
+ in the Properties view, the following fields are displayed for configuration</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/diagram_relationships_001.jpg" alt="diagram_relationships_001.jpg" style="border: none;" width="904" height="425" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>Base 
+ Cardinality</b></span>: The source (child table) can contain the following 
+ values:</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;&#160;0…1</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;&#160;0…*</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;&#160;1…*</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;&#160;1</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Base 
+ Role</b></span>: represents the role played by the child table in the relationship. 
+ For example, in a relationship between the Employee table (child) and 
+ the Company table (parent), it could be 'works for'.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Base 
+ Table</b></span>: Name of the table from which the relationship originates.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Description</b></span>: 
+ To include a brief description on the relationship.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>ID</b></span>: 
+ Boolean value indicating whether the relationship is identificatory (true) 
+ or not identificatory (False).</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Members</b></span>: 
+ Columns in the child table that are part of the restriction. </p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Name</b></span>: 
+ Name of the relationship. Data Modeler indicates a default value that 
+ cannot be modified.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Parent 
+ Cardinality</b></span>: It can contain the following values:</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;&#160;0…1</p>
+<p class="Topic-Text-Bulleted3">• &#160;&#160;&#160;&#160;&#160;1</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Parent 
+ Role</b></span>: represents the role played by the parent table in the relationship. 
+ For example, in a relationship between the Employee table (child) and 
+ the Company table (parent), it could be 'employs'.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Parent 
+ Table</b></span>: Name of the target relationship table. &#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Referenced 
+ Members</b></span>: columns making up the unique restriction.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Unique 
+ Key</b></span>: the values of these fields uniquely identify each record in 
+ the table (UK). </p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Unique 
+ Restriction</b></span>: unique restriction (PK or UK constraint) belonging 
+ to the parent table to which the child table is referencing through the 
+ FK.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>When 
+ Updated</b></span>: Click <img src="images/boton_flecha.jpg" alt="boton_flecha.jpg" style="border: none;" width="16" height="20" border="0" /> &#160;and 
+ in the combo list, select the referential integrity action to be used 
+ when a row is updated in the parent table.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/diagram_relationships_002.jpg" alt="diagram_relationships_002.jpg" style="border: none;" width="904" height="287" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>When 
+ Deleted</b></span>: Click <img src="images/boton_flecha.jpg" alt="boton_flecha.jpg" style="border: none;" width="16" height="20" border="0" /> &#160;and 
+ in the combo list, select the referential integrity action to be used 
+ when a row is updated in the parent table.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/diagram_relationships_005.jpg" alt="diagram_relationships_005.jpg" style="border: none;" width="869" height="244" border="0" /></p>
+<p class="Image">&#160;</p>
+<p>When a new relationship is created, a wizard will be displayed if:</p>
+<p class="Topic-Text-Bulleted">• &#160;&#160;&#160;&#160;&#160;the member 
+ columns already exist in the child table even though their names do not 
+ match.</p>
+<p class="Topic-Text-Bulleted">• &#160;&#160;&#160;&#160;&#160;the parent 
+ table includes several keys</p>
+<p>&#160;</p>
+<p>The name of the member columns will be displayed for each key so you 
+ can define the list of member columns for the relationship by choosing 
+ among the columns of the child table with the corresponding type or by 
+ adding a new column using the columns from the referenced key.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/diagram_relationships_007.jpg" style="border: none;" alt="diagram_relationships_007.jpg" width="741" height="445" border="0" /></p>
+<p class="Image">&#160;</p>
+<p>This wizard displays the columns of the child table on the left and 
+ the columns of the referenced key on the right. The <span style="font-weight: bold;"><b>Members</b></span> 
+ section appears in the middle section and contains one member column per 
+ FK-referenced members. Columns from the list of referenced members and 
+ from the child table can be included in this section.</p>
+<p>&#160;</p>
+<p>This wizard runs a series of validations in order to add the columns 
+ to the <span style="font-weight: bold;"><b>Members</b></span> section. These 
+ validations are as follows:</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;&#160;The number 
+ of member columns must match the number of referenced columns.</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;&#160;The type 
+ of each member column must match the corresponding referenced column.</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;&#160;The name 
+ of the new member column must be different from another new column or 
+ an existing one in the table.</p>
+<p>&#160;</p>
+<p>The <span style="font-weight: bold;"><b>Members</b></span> section can be completed 
+ in different ways: </p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;&#160;If the 
+ column to be added as a member has already been created on the child table, 
+ this column can be used instead of including a new one. To do so, select 
+ the column from the list that appears on the left and click <img src="images/boton_add.jpg" style="border: none;" alt="boton_add.jpg" width="55" height="25" border="0" /> 
+ &#160;. The column will be displayed in the Members section.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_a_diagram_016.jpg" style="border: none;" alt="creating_a_diagram_016.jpg" width="767" height="460" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted1">• &#160;&#160;&#160;&#160;To add the column 
+ using the list appearing on the right and containing elements referenced 
+ from the foreign key, then, select the column and click &#160;<img src="images/boton_copy.jpg" style="border: none;" alt="boton_copy.jpg" width="95" height="25" border="0" /> 
+ or &#160;<img src="images/boton_copy_all.jpg" style="border: none;" alt="boton_copy_all.jpg" width="95" height="25" border="0" /> to copy all the columns. In 
+ this case, the column not only would be added to the <span style="font-weight: bold;"><b>Members</b></span> 
+ section, but it would also be created in the list on the child table.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_a_diagram_017.jpg" style="border: none;" alt="creating_a_diagram_017.jpg" width="759" height="456" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Indent1">The icon <img src="images/diagram_relationships_009.jpg" style="border: none;" alt="diagram_relationships_009.jpg" width="14" height="18" border="0" /> 
+ &#160;&#160;will appear next to the newly added column in order to differentiate 
+ it from existing columns on the child table.</p>
+<p class="Topic-Text-Indent1">Whenever a new column is added by using a 
+ referenced column, a check will b run to verify whether there is already 
+ a column with the same name on the child table by using, whenever necessary, 
+ a numeric suffix to prevent name conflicts from occurring.</p>
+<p>&#160;</p>
+<p class="Image"><img src="images/diagram_relationship_010.jpg" style="border: none;" alt="diagram_relationship_010.jpg" width="165" height="54" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Image">Add as many columns as necessary in order to ensure there 
+ is an identical number of member columns and of members referenced from 
+ the Foreign Key. </p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/diagram_relationships_008.jpg" style="border: none;" alt="diagram_relationships_008.jpg" width="741" height="445" border="0" /></p>
+<p>If the order of the members and the order of the referenced members 
+ are not the same, use<img src="images/boton_up.jpg" style="border: none;" alt="boton_up.jpg" width="55" height="25" border="0" /> &#160;and 
+ <img src="images/boton_down.jpg" style="border: none;" alt="boton_down.jpg" width="55" height="25" border="0" /> &#160;to modify the order accordingly; otherwise, 
+ the &#160;<img src="images/boton_ok.jpg" style="border: none;" alt="boton_ok.jpg" width="92" height="25" border="0" /> &#160;button will 
+ not be enabled.</p>
+<p>Click <img src="images/boton_ok.jpg" style="border: none;" alt="boton_ok.jpg" width="92" height="25" border="0" /> &#160;&#160;to finish the process.</p>
+<p class="Topic-Text-Bulleted1">&#160;</p>
+<p style="font-weight: bold;">Also see</p>
+<p><a href="creating_a_diagram.htm">Creating a Diagram</a></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

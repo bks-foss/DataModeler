@@ -1,0 +1,146 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 8" />
+ <title>Creating a Column</title>
+<link rel="StyleSheet" href="htmlhelp.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whlang.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.href = strUrl.substring(0, n);
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Data Modeler\nCreating a Column");
+addButton("show",BTN_TEXT,"Mostrar","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("DataModeler.htm", "", ">", "Home", "cover.htm");
+document.write("<a href=\"cover.htm\">Data Modeler<\/a> > Creating a Column<\/p>");
+
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("DataModeler.htm");
+
+		autoSync(0);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+//-->
+//]]></script>
+<h1>Creating a Column</h1>
+<p style="font-weight: bold;">Purpose</p>
+<p>A column is a component of a table to which a name, data type and default 
+ value are assigned. Depending on the data type assigned to the column, 
+ more or fewer attributes to be completed will be displayed.</p>
+<p>Columns are defined in the tables.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_column_001.jpg" alt="creating_column_001.jpg" style="border: none;" width="188" height="150" border="0" /></p>
+<p class="Image">&#160;</p>
+<p style="font-weight: bold;">Steps</p>
+<p class="Topic-Text-Numered">1. &#160;&#160;&#160;Several options are 
+ available for including a column in a table:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;In the 
+ Data Modeler Navigator view, right click the table where the column must 
+ be included and in the popup menu, select <span style="font-weight: bold;"><b>New&gt;Column</b></span></p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;In the 
+ editor palette, click the element &#160;<img src="images/diagram_editor_palette_003.jpg" alt="diagram_editor_palette_003.jpg" style="border: none;" width="91" height="20" border="0" />, go to the 
+ table where you want to create the column and click again.</p>
+<p class="Topic-Text-Indent1">The column appears in the table.</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_column_002.jpg" alt="creating_column_002.jpg" style="border: none;" width="812" height="350" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Numered">2. &#160;&#160;The Properties view displays 
+ the following fields that are used for parameterising the column:</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Cancellable</b></span>: 
+ Boolean value indicating whether a null value (False) or not (True) can 
+ be included.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Primary 
+ Key</b></span>: Boolean value indicating whether the column represents the 
+ primary key of the table. &#160;These columns cannot be cancellable, so 
+ if their value is True, the value for the Cancellable field will also 
+ be True.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Description</b></span>: 
+ Column description.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Name</b></span>: 
+ Name identifying the column</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;<span style="font-weight: bold;"><b>&#160;Part 
+ of Foreign Key</b></span>: Indicates whether the column is a reference to 
+ a key in another table. Determines or establishes the relationship between 
+ two tables.</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Primitive 
+ Type</b></span>: Combo list where the data types predefined for each database 
+ can be selected</p>
+<p class="Topic-Text-Bulleted2">- &#160;&#160;&#160;&#160;&#160;<span style="font-weight: bold;"><b>Default 
+ Value</b></span>: Default value</p>
+<p class="Image">&#160;</p>
+<p class="Image"><img src="images/creating_column_003.jpg" alt="creating_column_003.jpg" style="border: none;" width="812" height="253" border="0" /></p>
+<p class="Image">&#160;</p>
+<p class="Topic-Text-Bulleted2" style="font-weight: bold;">Also see</p>
+<p class="Topic-Text-Bulleted2"><a href="creating_a_diagram.htm">Creating 
+ a Diagram</a></p>
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+</body>
+</html>

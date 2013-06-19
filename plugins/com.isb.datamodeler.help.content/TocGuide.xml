@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Data Modeler">
+  <topic href="html/Cover.htm" label="Data Modeler - BKS V3.5SP1">
+   <topic href="html/introduction.htm" label="Introduction"/>
+   <topic href="html/using_data_modeler.htm" label="Using Data Modeler">
+    	<topic href="html/data_modeler_navigator.htm" label="Data Modeler Navigator">
+    		<topic href="html/copy_paste_and_move_elements.htm" label="Copy, Paste and Move Elements"/>
+    		<topic href="html/rename_elements.htm" label="Rename Elements"/>
+       		<topic href="html/import_tables.htm" label="Import Tables"/> 	
+      		<topic href="html/detect_possible_relationships.htm" label="Detect Possible Relationships"/>
+  		</topic>	
+    	<topic href="html/properties.htm" label="Properties"/>
+    </topic> 	
+    <topic href="html/creating_a_data_modeler_project.htm" label="Creating a Data Modeler Project"/>
+    <topic href="html/creating_a_schema.htm" label="Creating a Shema"/>
+ 	<topic href="html/creating_a_diagram.htm" label="Creating a Diagram">
+    	<topic href="html/diagram_editor_palette.htm" label="Diagram Editor Palette"/>
+    	<topic href="html/diagram_relationships.htm" label="Diagram Relationship"/>
+    </topic>
+    <topic href="html/creating_a_table.htm" label="Creating a Table"/>	
+    <topic href="html/creating_a_column.htm" label="Creating a Column"/>
+    <topic href="html/creating_a_unique_key.htm" label="Creating a Unique Key"/>
+    <topic href="html/deleting_elements_and_relationships_from_the_diagram.htm" label="Deleting Elements and Relationships from the Diagram">
+    	<topic href="html/deleting_diagram_elements.htm" label="Deleting Diagram Elements"/>
+    	<topic href="html/deleting_diagram_relationships.htm" label="Deleting Diagram Relationship"/>
+    </topic>
+   <topic href="html/model_validations.htm" label="Model Validations">
+    	<topic href="html/parameterisation_of_the_validations.htm" label="Parameterisation of the validations"/>
+   </topic>
+   <topic href="html/data_model_comparator.htm" label="Data Model Comparator">
+    	<topic href="html/local_to_local_comparison.htm" label="Local to Local Comparison"/>
+    	<topic href="html/local_to_cvs_comparison.htm" label="Local to CVS Comparison"/>
+    	<topic href="html/merge_for_model_import.htm" label="Merge for Model Import"/>
+   </topic>
+   <topic href="html/glossary.htm" label="Glossary"/>
+  </topic>
+</toc>
