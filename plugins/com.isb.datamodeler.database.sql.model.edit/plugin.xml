@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2012/03/06 10:18:50 rdedios Exp $
+-->
+
+<plugin>
+
+   <extension-point id="databaseExtension" name="Database Extension" schema="schema/databaseExtension.exsd"/>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http:///sqldatabase.ecore"
+            class="sqldatabase.provider.SqldatabaseItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            uri="http:///com/isb/datamodeler/ui/model/project.ecore"
+            class="sqldatabase.provider.SqldatabaseItemProviderAdapterFactory$ProjectChildCreationExtender"/>
+   </extension>
+
+</plugin>

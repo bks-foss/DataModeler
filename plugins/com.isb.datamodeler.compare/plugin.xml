@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<!--La dependencia del emf compare va por feature en la feature de
+datamodeler, ya que dependemos de plugins del emf compare de manera
+indirecta.  -->
+
+ <extension
+        point="org.eclipse.emf.compare.match.engine">
+     <matchengine
+           engineClass="com.isb.datamodeler.compare.core.DataModelerMatchEngine"
+           fileExtension="dm"
+           label="DataModeler">
+     </matchengine>
+  </extension>
+ <extension
+       point="org.eclipse.emf.compare.diff.engine">
+    <diffengine
+          engineClass="com.isb.datamodeler.compare.core.DataModelerDiffEngine"
+          label="Motor de Diferencias DataModeler"
+          priority="low">
+    </diffengine>
+ </extension>
+ <extension
+         point="org.eclipse.emf.compare.ui.team.handler">
+      <handler
+            class="com.isb.datamodeler.compare.core.DataModelerComparisonHandler"
+            id="com.isb.datamodeler.compare.core.DataModelerComparisonHandler">
+      </handler>
+   </extension>   
+   
+   <extension point = "org.eclipse.compare.contentMergeViewers"> 
+     <viewer 
+         id="com.isb.datamodeler.compare.ui.DataModelerViewerContentCreator" 
+         class="com.isb.datamodeler.compare.ui.DataModelerViewerContentCreator" />
+          <contentTypeBinding
+            contentMergeViewerId="com.isb.datamodeler.compare.ui.DataModelerViewerContentCreator"
+            contentTypeId="com.isb.datamodeler.dm.contentType"/>   
+	</extension> 
+
+	<extension
+       id="com.isb.datamodeler.dm.contentType"
+       name="DataodelerContentType"
+       point="org.eclipse.core.contenttype.contentTypes">
+    <content-type
+          file-extensions="dm"
+          id="com.isb.datamodeler.dm.contentType"
+          name="DataModeler File"
+          priority="normal">
+    </content-type> 
+ </extension>
+ 
+ <extension
+       id="com.isb.datamodeler.compare.ui.DataModelerViewerStructureCreator"
+       name="com.isb.datamodeler.compare.ui.DataModelerViewerStructureCreator"
+       point="org.eclipse.compare.structureMergeViewers">
+    <viewer
+          class="com.isb.datamodeler.compare.ui.DataModelerStructureMergeViewerCreator"
+          extensions="dm,dmvirtual"
+          id="com.isb.datamodeler.compare.dataModelerStructureMergeViewer">
+    </viewer>
+    <contentTypeBinding         
+          contentTypeId="com.isb.datamodeler.dm.contentType"
+          structureMergeViewerId="com.isb.datamodeler.compare.dataModelerStructureMergeViewer"/>   
+ </extension>
+ <extension
+       point="org.eclipse.ui.startup">
+    <startup
+          class="com.isb.datamodeler.compare.Activator">
+    </startup>
+ </extension>
+ <extension
+       point="org.eclipse.emf.compare.diff.mergerprovider">
+    <mergerprovider
+          fileExtension="dm"
+          mergerProviderClass="com.isb.datamodeler.compare.merge.DataModelerMergeProvider"
+          priority="normal">
+    </mergerprovider>
+ </extension>
+ <extension
+       point="org.eclipse.ui.navigator.navigatorContent">
+    <actionProvider
+          class="com.isb.datamodeler.compare.actions.DataModelerCompareActionProvider"
+          id="com.isb.datamodeler.ui.navigator.DataModelerCompareActions">
+       <enablement>
+          <adapt
+                type="com.isb.datamodeler.ui.project.EProject">
+          </adapt>
+       </enablement>
+    </actionProvider>
+ </extension>
+    
+</plugin>

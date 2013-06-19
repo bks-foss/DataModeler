@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Export-Package: com.isb.datamodeler.compare.core,com.isb.datamodeler.c
+ ompare.merge
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DatamodelerCompare.jar
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,com.isb.datamo
+ deler.ui.diagram,org.eclipse.emf.compare,org.eclipse.emf.compare.matc
+ h,org.eclipse.emf.compare.diff,org.eclipse.compare,org.eclipse.emf.co
+ mpare.ui,com.isb.datamodeler.ui.model,org.eclipse.emf.ecore.xmi,org.e
+ clipse.gmf.runtime.notation,org.eclipse.ui.ide,com.isb.datamodeler.mo
+ del.core,org.eclipse.team.core,org.eclipse.team.ui,org.eclipse.team.c
+ vs.ui,org.eclipse.emf.edit.ui,org.eclipse.emf.transaction,org.eclipse
+ .emf.workspace,org.eclipse.team.cvs.core,com.isb.datamodeler.messages
+ ,org.eclipse.ui.navigator
+Bundle-Vendor: %providerName
+Bundle-Version: 2.0.2
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.isb.datamodeler.compare.Activator
+Bundle-SymbolicName: com.isb.datamodeler.compare;singleton:=true
+

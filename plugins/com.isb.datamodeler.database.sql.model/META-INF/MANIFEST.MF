@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Require-Bundle: com.isb.datamodeler.ui.model;visibility:=reexport,com.
+ isb.datamodeler.model.triggers,org.eclipse.core.resources
+Export-Package: sqldatabase,sqldatabase.impl,sqldatabase.util
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 2.0.0
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.database.sql.model;singleton:
+ =true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.2 2012/06/05 11:10:02 aalvamat Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///sqldatabase.ecore"
+            class="sqldatabase.SqldatabasePackage"
+            genModel="model/SQLdatabase.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.invocation_delegate">
+      <factory
+            class="com.isb.datamodeler.internal.sql.invocation.SQLInvocationDelegateFactory"
+            uri="com.isb.datamodeler.db.schema.invocation">
+      </factory>
+   </extension>
+   <extension
+         point="com.isb.datamodeler.model.triggers.initializerExtension">
+      <initializer
+            class="com.isb.datamodeler.internal.sql.initializers.SQLProjectInitializer"
+            owner="com.isb.datamodeler.ui.project.impl.EProjectImpl"
+            priority="lowest">
+      </initializer>
+   </extension>
+</plugin>

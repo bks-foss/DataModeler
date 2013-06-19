@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.isb.datamodeler.database.sql.model/src-gen"
+    editDirectory="/com.isb.datamodeler.database.sql.model.edit/src-gen" editorDirectory="/com.isb.datamodeler.database.sql.model.editor/src-gen"
+    modelPluginID="com.isb.datamodeler.database.sql.model" modelName="SQLdatabase"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    runtimeVersion="2.6" usedGenPackages="../../com.isb.datamodeler.model/model/datamodeler.genmodel#//datamodeler ../../com.isb.datamodeler.ui.model/model/datamodelerUI.genmodel#//ui platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation"
+    operationReflection="true">
+  <foreignModel>SQLdatabase.ecore</foreignModel>
+  <genPackages prefix="Sqldatabase" disposableProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="SQLdatabase.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SQLdatabase.ecore#//SQLPrimitiveType">
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/CHARACTER"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/CHARACTER_VARYING"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/CHARACTER_LARGE_OBJECT"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/BINARY"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/BINARY_VARYING"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/BINARY_LARGE_OBJECT"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/NUMERIC"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/DECIMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/SMALLINT"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/BIGINT"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/REAL"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/DOUBLE_PRECISION"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/TIME"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/TIME_WITH_TIMEZONE"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/TIMESTAMP"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/TIMESTAMP_WITH_TIMEZONE"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/INTERVAL"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/XML"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/DATALINK"/>
+      <genEnumLiterals ecoreEnumLiteral="SQLdatabase.ecore#//SQLPrimitiveType/ROWID"/>
+    </genEnums>
+    <genClasses ecoreClass="SQLdatabase.ecore#//SQLDatabase"/>
+  </genPackages>
+</genmodel:GenModel>

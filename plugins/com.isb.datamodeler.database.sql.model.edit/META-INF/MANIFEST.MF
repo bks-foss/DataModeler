@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Export-Package: sqldatabase.provider
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,com.isb.datamodeler.database.
+ sql.model;visibility:=reexport,com.isb.datamodeler.ui.model.edit;visi
+ bility:=reexport,org.eclipse.gmf.runtime.notation.edit;visibility:=re
+ export
+Bundle-Vendor: %providerName
+Bundle-Version: 2.0.0
+Bundle-ManifestVersion: 2
+Bundle-Activator: sqldatabase.provider.SQLdatabaseEditPlugin$Implement
+ ation
+Bundle-SymbolicName: com.isb.datamodeler.database.sql.model.edit;singl
+ eton:=true
+
