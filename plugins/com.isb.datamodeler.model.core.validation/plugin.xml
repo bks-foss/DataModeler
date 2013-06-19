@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.isb.datamodeler.validation.validators" name="DataModel Validation Contribution" schema="schema/com.isb.modeler.validation.validators.exsd"/>
+   <extension-point id="com.isb.datamodeler.validation.db.validators" name="Data Model DB Validation Contribution" schema="schema/com.isb.datamodeler.validation.db.validators.exsd"/>
+   <extension
+         point="com.isb.datamodeler.validation.validators">
+         <category id="mandatoryRule" name="%DataModeler.validations.mandatoryRule.name" mandatory="true">
+     		<description>%DataModeler.validations.mandatoryRule.description</description>
+     	</category>
+        <category id="regulationRule" name="%DataModeler.validations.regulationRule.name" mandatory="false">
+     	   <description>%DataModeler.validations.regulationRule.description</description>
+        </category>
+   </extension>
+   
+
+</plugin>

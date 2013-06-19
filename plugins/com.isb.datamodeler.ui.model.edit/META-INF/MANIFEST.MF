@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Export-Package: com.isb.datamodeler.ui.project.provider
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DataModelerUI_ModelEdit.jar
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: com.isb.datamodeler.ui.model;visibility:=reexport,com.
+ isb.datamodeler.model.edit;visibility:=reexport,org.eclipse.gmf.runti
+ me.notation.edit,org.eclipse.core.resources,org.eclipse.core.runtime
+Bundle-Vendor: %providerName
+Bundle-Version: 2.0.0
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.isb.datamodeler.ui.project.provider.DatamodelerU
+ IEditPlugin$Implementation
+Bundle-SymbolicName: com.isb.datamodeler.ui.model.edit;singleton:=true
+

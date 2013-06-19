@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="uiPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="ui">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Table"
+          description="Create new Table">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Column"
+          description="Create new Column">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Unique Key"
+          description="Create new Unique Key">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Identifying"
+          description="Create new Identifying Relation">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/Pkey_Identifying.gif"
+            bundle="com.isb.datamodeler.model.edit"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Non Identifying"
+          description="Create new Non Identifying Relation">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="/icons/full/obj16/Pkey_Non_Identifying.gif"
+            bundle="com.isb.datamodeler.model.edit"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,com.isb.datamodeler.model.validation,co
+ m.isb.datamodeler.ui,com.isb.datamodeler.model.core,org.eclipse.emf.t
+ ransaction,com.isb.datamodeler.ui.model,org.eclipse.gmf.runtime.notat
+ ion,com.isb.datamodeler.model.core.validation,com.isb.datamodeler.mes
+ sages
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DataModelerUI_Validation.jar
+Bundle-Version: 2.0.1
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-Activator: com.isb.datamodeler.ui.validation.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.ui.model.validation;singleton
+ :=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

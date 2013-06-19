@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.6 2011/11/10 14:27:36 aalvamat Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///com/isb/datamodeler/ui/model/project.ecore"
+            class="com.isb.datamodeler.ui.project.EProjectPackage"
+            genModel="model/datamodelerUI.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///com/isb/datamodeler/ui/model/diagram.ecore"
+            class="com.isb.datamodeler.ui.diagram.EDiagramPackage"
+            genModel="model/datamodelerUI.genmodel"/>
+   </extension>
+
+
+
+</plugin>

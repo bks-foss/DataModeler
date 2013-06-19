@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui.views.properties.tabbed,com.isb.datamod
+ eler.ui.diagram,org.eclipse.gmf.runtime.diagram.ui.properties,com.isb
+ .datamodeler.model
+Bundle-Vendor: %providerName
+Bundle-ClassPath: DataModeler_UIDiagramProperties.jar
+Bundle-Version: 2.0.0
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.ui.diagram.properties;singlet
+ on:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

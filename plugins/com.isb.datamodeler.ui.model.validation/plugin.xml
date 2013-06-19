@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.eclipse.emf.ecore.validation_delegate">
+      <delegate
+            class="com.isb.datamodeler.ui.validation.delegates.ProjectValidationDelegate"
+            uri="com.isb.datamodeler.ui.validation.delegates.ProjectValidationDelegate">
+      </delegate>
+   </extension>
+  <extension
+        point="com.isb.datamodeler.validation.validators">
+        <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.ui.validation.validators.DiagramDuplicateElementInvValidator"
+           code="[BKSEDMM0003]"
+           id="com.isb.datamodeler.ui.validation.DiagramDuplicateElementInvValidator"
+           name="[BKSEDMM0003] - Elemento no repetido en diagrama"
+           target="com.isb.datamodeler.schema.ESchema">
+        <description>
+           Valida que no haya elementos repetidos en un diagrama de modelado
+        </description>
+        </validator>
+    	<validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.ui.validation.validators.DuplicatedSchema"
+           code="[BKSEDMM0022]"
+           id="com.isb.datamodeler.ui.validation.validators.DuplicatedSchema"
+           name="[BKSEDMM0022] - Esquemas Duplicados."
+           target="com.isb.datamodeler.ui.project.EProject">
+           <description>
+              No se pueden repetir nombres de esquemas en todo el modelo.
+           </description>
+        </validator> 
+     <validator
+           category="regulationRule"
+           class="com.isb.datamodeler.ui.validation.validators.ElementInDiagramRegulationRuleInvValidator"
+           code="[BKSEDMN0001]"
+           id="com.isb.datamodeler.ui.validation.validators.ElementInDiagramRegulationRuleInvValidator"
+           name="%ElementInDiagramRegulationRuleInvValidator.name"
+           target="com.isb.datamodeler.schema.ESchema">
+        <description>
+           %ElementInDiagramRegulationRuleInvValidator.description
+        </description>
+     </validator>
+     <validator
+           category="regulationRule"
+           class="com.isb.datamodeler.ui.validation.validators.ExternalTablesRegulationRuleInvValidator"
+           code="[BKSWDMN0002]"
+           id="com.isb.datamodeler.ui.validation.validators.ExternalTablesRegulationRuleInvValidator"
+           name="%ExternalTablesRegulationRuleInvValidator.name"
+           target="com.isb.datamodeler.ui.project.EProject">
+        <description>
+           %ExternalTablesRegulationRuleInvValidator.description
+        </description>
+     </validator>     
+     <validator
+           category="regulationRule"
+           class="com.isb.datamodeler.ui.validation.validators.SchemaInModelRegulationRuleInvValidator"
+           code="[BKSEDMN0003]"
+           id="com.isb.datamodeler.ui.validation.SchemaInModelRegulationRuleInvValidator"
+           name="%SchemaInModelRegulationRuleInvValidator.name"
+           target="com.isb.datamodeler.ui.project.EProject">
+        <description>
+           %SchemaInModelRegulationRuleInvValidator.description
+        </description>
+     </validator>
+  </extension>
+      
+</plugin>

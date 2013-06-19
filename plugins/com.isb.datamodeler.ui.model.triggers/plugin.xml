@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.transaction.listeners">
+      <listener
+            class="com.isb.datamodeler.project.triggers.ProjectTriggerListener">
+         <editingDomain
+               id="com.isb.datamodeler.ui.diagram.EditingDomain">
+         </editingDomain>
+      </listener>
+   </extension>
+   <extension
+         point="org.eclipse.emf.transaction.listeners">
+      <listener
+            class="com.isb.datamodeler.project.triggers.SchemaTriggerListener">
+         <editingDomain
+               id="com.isb.datamodeler.ui.diagram.EditingDomain">
+         </editingDomain>
+      </listener>
+   </extension>
+</plugin>

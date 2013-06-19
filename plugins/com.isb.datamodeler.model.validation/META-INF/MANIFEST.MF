@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Require-Bundle: com.isb.datamodeler.model.edit,com.isb.datamodeler.mod
+ el.core.validation,com.isb.datamodeler.messages,com.isb.datamodeler.u
+ i.model,org.eclipse.core.runtime
+Export-Package: com.isb.datamodeler.model.validation.validators,com.is
+ b.datamodeler.model.validation,com.isb.datamodeler.model.validation.d
+ elegates
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DataModeler_ModelValidation.jar
+Bundle-Version: 2.0.1
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.model.validation;singleton:=t
+ rue
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Export-Package: com.isb.datamodeler.model.core,com.isb.datamodeler.mod
+ el.core.editingDomain
+Require-Bundle: org.eclipse.gmf.runtime.diagram.core
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DataModeler_ModelCore.jar
+Bundle-Version: 2.0.0
+Bundle-Name: %pluginName
+Bundle-Activator: com.isb.datamodeler.model.core.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.model.core;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

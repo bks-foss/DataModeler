@@ -1,0 +1,67 @@
+﻿/*
+ * Copyright (c) 2007, 2009 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«REM»Inner class of DocumentProvider«ENDREM»
+ 
+«DEFINE notifyChanged FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'ResourceSetModificationListener.xpt')»
+public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+	if (notification.getNotifier() instanceof org.eclipse.emf.ecore.resource.ResourceSet) {
+		super.notifyChanged(notification);
+	}
+	if (!notification.isTouch() && myModifiedFilter.matches(notification)) {
+		if (notification.getNotifier() instanceof org.eclipse.emf.ecore.resource.Resource) {
+			org.eclipse.emf.ecore.resource.Resource resource = (org.eclipse.emf.ecore.resource.Resource) notification.getNotifier();
+			// Revisar de cara a OPEN SOURCE: Filtramos para evitar que al modificar un diagrama
+			// se pongan a dirty y se salven el resto de diagramas modificados con anterioridad
+			// Ver bugzilla 20694
+			if(myInfo.getEditorInput() instanceof org.eclipse.emf.common.ui.URIEditorInput)
+					{
+						org.eclipse.emf.common.ui.URIEditorInput uriEditorInput = (org.eclipse.emf.common.ui.URIEditorInput)myInfo.getEditorInput();
+						if(!resource.getURI().lastSegment().equals(uriEditorInput.getURI().lastSegment()))
+							return;
+					}
+			if (resource.isLoaded()) {
+				boolean modified = false;
+				for (java.util.Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/ it = myInfo.getLoadedResourcesIterator(); it.hasNext() && !modified;) {
+					org.eclipse.emf.ecore.resource.Resource nextResource = (org.eclipse.emf.ecore.resource.Resource) it.next();
+					if (nextResource.isLoaded()) {
+						modified = nextResource.isModified();
+					}
+				}
+				boolean dirtyStateChanged = false;
+				synchronized (myInfo) {
+					if (modified != myInfo.fCanBeSaved) {
+						myInfo.fCanBeSaved = modified;
+						dirtyStateChanged = true;
+					}
+	«IF null = editorGen.application-»
+					if (!resource.isModified()) {
+						myInfo.setSynchronized(resource);
+					}
+	«ENDIF-»
+				}
+				if (dirtyStateChanged) {
+					fireElementDirtyStateChanged(myInfo.getEditorInput(), modified);
+	
+					if (!modified) {
+						myInfo.setModificationStamp(computeModificationStamp(myInfo));
+					}
+				}
+			}
+		}
+	}
+}
+«ENDDEFINE»
+

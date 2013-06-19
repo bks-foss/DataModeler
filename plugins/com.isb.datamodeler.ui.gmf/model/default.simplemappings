@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:simplemap="http://org.msl.simple.gmfmap/simplemappings">
+  <simplemap:SimpleMapping xmi:id="_Xp3poWbVEeGb8Ybk4JM9dA">
+    <children xmi:type="simplemap:SimpleTopNode" xmi:id="_Xp3pombVEeGb8Ybk4JM9dA">
+      <domainMetaElement xmi:type="ecore:EClass" href="platform:/resource/com.isb.datamodeler.model/model/datamodeler.ecore#//tables/PersistentTable"/>
+      <nodeReference xmi:type="gmfmap:TopNodeReference" href="DataModeler.gmfmap#//@nodes.0"/>
+      <containmentFeature xmi:type="ecore:EReference" href="platform:/resource/com.isb.datamodeler.model/model/datamodeler.ecore#//schema/Schema/tables"/>
+      <children xmi:type="simplemap:SimpleCompartment" xmi:id="_Xp3po2bVEeGb8Ybk4JM9dA" name="ColumnCompartment">
+        <children xmi:type="simplemap:SimpleLabelNode" xmi:id="_Xp3ppGbVEeGb8Ybk4JM9dA">
+          <domainMetaElement xmi:type="ecore:EClass" href="platform:/resource/com.isb.datamodeler.model/model/datamodeler.ecore#//tables/Column"/>
+          <nodeReference xmi:type="gmfmap:ChildReference" href="DataModeler.gmfmap#//@nodes.0/@ownedChild/@children.0"/>
+          <containmentFeature xmi:type="ecore:EReference" href="platform:/resource/com.isb.datamodeler.model/model/datamodeler.ecore#//tables/Table/columns"/>
+        </children>
+        <compartmentMapping xmi:type="gmfmap:CompartmentMapping" href="DataModeler.gmfmap#//@nodes.0/@ownedChild/@compartments.0"/>
+      </children>
+      <children xmi:type="simplemap:SimpleCompartment" xmi:id="_Xp3ppWbVEeGb8Ybk4JM9dA" name="ConstraintsCompartment">
+        <children xmi:type="simplemap:SimpleLabelNode" xmi:id="_Xp3ppmbVEeGb8Ybk4JM9dA">
+          <domainMetaElement xmi:type="ecore:EClass" href="platform:/resource/com.isb.datamodeler.model/model/datamodeler.ecore#//constraints/UniqueConstraint"/>
+          <nodeReference xmi:type="gmfmap:ChildReference" href="DataModeler.gmfmap#//@nodes.0/@ownedChild/@children.1"/>
+          <containmentFeature xmi:type="ecore:EReference" href="platform:/resource/com.isb.datamodeler.model/model/datamodeler.ecore#//tables/BaseTable/constraints"/>
+        </children>
+        <children xmi:type="simplemap:SimpleLabelNode" xmi:id="_Xp3pp2bVEeGb8Ybk4JM9dA">
+          <domainMetaElement xmi:type="ecore:EClass" href="platform:/resource/com.isb.datamodeler.model/model/datamodeler.ecore#//constraints/ForeignKey"/>
+          <nodeReference xmi:type="gmfmap:ChildReference" href="DataModeler.gmfmap#//@nodes.0/@ownedChild/@children.2"/>
+          <containmentFeature xmi:type="ecore:EReference" href="platform:/resource/com.isb.datamodeler.model/model/datamodeler.ecore#//tables/BaseTable/constraints"/>
+        </children>
+        <compartmentMapping xmi:type="gmfmap:CompartmentMapping" href="DataModeler.gmfmap#//@nodes.0/@ownedChild/@compartments.1"/>
+      </children>
+    </children>
+    <children xmi:type="simplemap:SimpleLinkMapping" xmi:id="_Xp3pqGbVEeGb8Ybk4JM9dA" name="ForeignKey">
+      <linkMapping xmi:type="gmfmap:LinkMapping" href="DataModeler.gmfmap#//@links.0"/>
+    </children>
+    <children xmi:type="simplemap:SimpleLinkMapping" xmi:id="_Xp3pqWbVEeGb8Ybk4JM9dA" name="ForeignKey">
+      <linkMapping xmi:type="gmfmap:LinkMapping" href="DataModeler.gmfmap#//@links.1"/>
+    </children>
+    <canvas xmi:type="gmfgraph:Canvas" href="DataModeler.gmfgraph#ui"/>
+    <palette xmi:type="gmftool:Palette" href="DataModeler.gmftool#//@palette"/>
+    <mapping xmi:type="gmfmap:Mapping" href="DataModeler.gmfmap#/"/>
+  </simplemap:SimpleMapping>
+  <notation:Diagram xmi:id="_Xqi_EGbVEeGb8Ybk4JM9dA" type="Simplemap" element="_Xp3poWbVEeGb8Ybk4JM9dA" name="default.simplemappings" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_Xqi_EWbVEeGb8Ybk4JM9dA"/>
+  </notation:Diagram>
+</xmi:XMI>

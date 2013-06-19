@@ -1,0 +1,7 @@
+# Tracing options for the com.isb.datamodeler.ui.diagram plug-in
+
+# Common issues
+com.isb.datamodeler.ui.diagram/debug=false
+
+# Visual IDs
+com.isb.datamodeler.ui.diagram/debug/visualID=false

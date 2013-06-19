@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="com.isb.datamodeler.model.triggers" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="com.isb.datamodeler.model.triggers" id="initializerExtension" name="Initializer Extension"/>
+      </appinfo>
+      <documentation>
+         [Enter description of this extension point.]
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="initializer"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="initializer">
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":com.isb.datamodeler.model.triggers.initializers.IDatamodelerInitializer"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="owner" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="database_id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="com.isb.datamodeler.database.sql.model.edit.databaseExtension/database/@id"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="priority" use="required">
+            <annotation>
+               <documentation>
+                  the name of the wizard priority, one of &lt;tt&gt;lowest&lt;/tt&gt;, &lt;tt&gt;lower&lt;/tt&gt;, &lt;tt&gt;low&lt;/tt&gt;, &lt;tt&gt;medium&lt;/tt&gt;, &lt;tt&gt;high&lt;/tt&gt;, &lt;tt&gt;higher&lt;/tt&gt;, or &lt;tt&gt;highest&lt;/tt&gt;
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="lowest">
+                  </enumeration>
+                  <enumeration value="lower">
+                  </enumeration>
+                  <enumeration value="low">
+                  </enumeration>
+                  <enumeration value="medium">
+                  </enumeration>
+                  <enumeration value="high">
+                  </enumeration>
+                  <enumeration value="higher">
+                  </enumeration>
+                  <enumeration value="highest">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

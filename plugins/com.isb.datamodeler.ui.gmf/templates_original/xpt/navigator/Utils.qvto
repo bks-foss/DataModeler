@@ -1,0 +1,70 @@
+/*
+ * Copyright (c) 2006, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+import gmf.CodeGenerationUtils;
+
+modeltype gmfgen uses "http://www.eclipse.org/gmf/2009/GenModel";
+modeltype genmodel uses "http://www.eclipse.org/emf/2002/GenModel";
+
+library Utils;
+
+helper getMaxVisualID(navigator : gmfgen::GenNavigator) : Integer {
+	return getNavigatorNodes(navigator)->sortedBy(n | n.visualID)->last().visualID;
+}
+
+helper isStringFeature(feature : genmodel::GenFeature) : Boolean {
+	return feature.ecoreFeature.eType.name = 'EString'
+}
+
+-- MODIFIERS: cached
+helper getNavigatorContainerNodes(navigator : gmfgen::GenNavigator) : Sequence(gmfgen::GenCommonBase) {
+	return getNavigatorNodes(navigator)->select(n | getChildReferencesFrom(navigator, n)->size() > 0)
+}
+
+-- MODIFIERS: cached
+helper getNavigatorContainedNodes(navigator : gmfgen::GenNavigator) : Sequence(gmfgen::GenCommonBase) {
+	return getNavigatorNodes(navigator)->select(n | getChildReferencesTo(navigator, n)->size() > 0)
+}
+
+-- MODIFIERS: private
+helper getNavigatorNodes(navigator : gmfgen::GenNavigator) : Sequence(gmfgen::GenCommonBase) {
+	return navigator.editorGen.diagram.getAllContainers()[gmfgen::GenCommonBase]->union(navigator.editorGen.diagram.links)->asSequence()
+}
+
+helper getGroupNames(_references : Sequence(gmfgen::GenNavigatorChildReference)) : Set(String) {
+	return _references->select(ref | ref.isInsideGroup())->collect(ref | ref.groupName)->asOrderedSet()
+}
+
+helper getNavigatorReference(groupName : String, childReferences : Sequence(gmfgen::GenNavigatorChildReference)) : gmfgen::GenNavigatorChildReference {
+	return childReferences->select(r | r.groupName = groupName)->first()
+}
+
+helper getChildReferencesFrom(navigator : gmfgen::GenNavigator, parent : gmfgen::GenCommonBase) : Sequence(gmfgen::GenNavigatorChildReference) {
+	return navigator.childReferences->select(r | parent.visualID = r.parent.visualID)->asSequence()
+}
+
+helper getChildReferencesTo(navigator : gmfgen::GenNavigator, child : gmfgen::GenCommonBase) : Sequence(gmfgen::GenNavigatorChildReference) {
+	return navigator.childReferences->select(r | child.visualID = r.child.visualID)->asSequence()
+}
+
+helper getDiagramTopReference(navigator : gmfgen::GenNavigator) : gmfgen::GenNavigatorChildReference {
+	return let diagramTopReferences = navigator.childReferences->select(cr | null = cr.parent)->select(cr | cr.child = navigator.editorGen.diagram) in (if diagramTopReferences->size() = 0 then null else diagramTopReferences->at(0 + 1) endif)
+}
+
+
+helper i18nKeyForGroup(groupName : String, contextElement : gmfgen::GenCommonBase) : String {
+	return 'NavigatorGroupName.' + (if null <> contextElement then contextElement.getUniqueIdentifier() else 'File' endif) + '.' + validJavaIdentifier(groupName)
+}
+
+helper i18nKeyForOpenDiagramActionName() : String {
+	return 'NavigatorActionProvider.OpenDiagramActionName'
+}

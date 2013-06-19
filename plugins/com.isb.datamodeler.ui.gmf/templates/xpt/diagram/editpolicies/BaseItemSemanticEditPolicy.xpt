@@ -1,0 +1,46 @@
+﻿/*
+ * Copyright (c) 2007, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+
+«EXTENSION xpt::diagram::editpolicies::Utils»
+«EXTENSION xpt::diagram::Utils»
+«EXTENSION xpt::GenModelUtils»
+
+«REM»
+	En lugar de eliminar unicamente los shortcuts dentro del mismo diagrama donde se está eliminando
+	eliminamos los shortcuts de todos los diagramas dentro del dominio de edición
+«ENDREM»
+«DEFINE addDestroyShortcutsCommand FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment('Clean all shortcuts and views to the host element from all the diagrams', 'BaseItemSemanticEditPolicy.xpt')»
+	protected void addDestroyViewsCommand(org.eclipse.gmf.runtime.common.core.command.ICompositeCommand cmd, org.eclipse.gmf.runtime.notation.View view) {
+		«EXPAND xpt::Common::_assert('view.getEAnnotation(\"Shortcut\") == null')-»
+		
+		java.util.List<org.eclipse.gmf.runtime.notation.View> viewsToRemove = new java.util.ArrayList<org.eclipse.gmf.runtime.notation.View>();
+
+		«REM»
+			Si a nivel de diagrama la politica canonica está desactivada, las conexiones no se refrescan al cambiar el modelo.
+			Si tenemos un elemento del modelo representado, como un nodo y a su vez como una conexion, al eliminar el nodo, la conexion 
+			no se refresca.
+		«ENDREM»
+		//Eliminamos los Shortcuts y Views de todos los diagramas
+		for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting  : org.eclipse.emf.ecore.util.EcoreUtil.UsageCrossReferencer.find(view.getElement(),getEditingDomain().getResourceSet())) {
+			if(!(setting.getEObject() instanceof org.eclipse.gmf.runtime.notation.View ) || setting.getEObject()==view || viewsToRemove.contains(setting.getEObject()))
+				continue;
+			viewsToRemove.add((org.eclipse.gmf.runtime.notation.View)setting.getEObject());
+		}
+		
+		for(org.eclipse.gmf.runtime.notation.View viewToRemove: viewsToRemove)
+			cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), viewToRemove));
+	}
+«ENDDEFINE»

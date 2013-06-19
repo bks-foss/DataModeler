@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="com.isb.datamodeler.ui.diagram">
+         <propertyTab
+               category="extra"
+               id="property.tab.domain.dataType"
+               label="%propertyTab.label">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="com.isb.datamodeler.ui.diagram">
+         <propertySection
+               class="com.isb.datamodeler.diagram.sheet.ColumnDataTypePropertySection"
+               filter="com.isb.datamodeler.diagram.sheet.ColumnDataTypePropertyFilter"
+               id="property.section.dataType"
+               tab="property.tab.domain.dataType">
+            <input
+                  type="com.isb.datamodeler.diagram.edit.parts.ColumnEditPart">
+            </input>
+            <input
+                  type="com.isb.datamodeler.diagram.navigator.DatamodelerDomainNavigatorItem">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+</plugin>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.setting_delegate">
+      <factory
+            class="com.isb.datamodeler.tables.setting.TablesSettingDelegateFactory"
+            uri="com.isb.datamodeler.tables.setting">
+      </factory>
+      <factory
+            class="com.isb.datamodeler.constraints.setting.ConstraintsSettingDelegateFactory"
+            uri="com.isb.datamodeler.constraints.setting">
+      </factory>
+      <factory
+            class="com.isb.datamodeler.schema.setting.SchemaSettingDelegateFactory"
+            uri="com.isb.datamodeler.schema.setting">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.invocation_delegate">
+      <factory
+            class="com.isb.datamodeler.tables.invocation.TablesInvocationDelegateFactory"
+            uri="com.isb.datamodeler.tables.invocation">
+      </factory>
+      <factory
+            class="com.isb.datamodeler.datatypes.invocation.DataTypesInvocationDelegateFactory"
+            uri="com.isb.datamodeler.datatypes.invocation">
+      </factory>
+      <factory
+            class="com.isb.datamodeler.constraints.invocation.ConstraintsInvocationDelegateFactory"
+            uri="com.isb.datamodeler.constraints.invocation">
+      </factory>
+      <factory
+            class="com.isb.datamodeler.schema.invocation.SchemaInvocationDelegateFactory"
+            uri="com.isb.datamodeler.schema.invocation">
+      </factory>
+   </extension>
+
+</plugin>

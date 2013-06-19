@@ -1,0 +1,79 @@
+﻿/*
+ * Copyright (c) 2007, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::navigator::Utils»
+
+«DEFINE NavigatorLinkHelper FOR gmfgen::GenNavigator-»
+	«EXPAND xpt::Common::copyright FOR editorGen-»
+package «packageName»;
+
+	«EXPAND xpt::Common::generatedClassComment»
+public class «linkHelperClassName» implements org.eclipse.ui.navigator.ILinkHelper {
+
+	«EXPAND xpt::navigator::getEditorInput::getEditorInput FOR editorGen-»
+
+	«EXPAND findSelection-»
+	
+	«EXPAND getActiveEditor-»
+	
+	«EXPAND activateEditor-»
+	
+	«EXPAND additions-»
+}
+«ENDDEFINE»
+
+«DEFINE findSelection FOR gmfgen::GenNavigator-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'NavigatorLinkHelper.xpt')»
+public org.eclipse.jface.viewers.IStructuredSelection findSelection(org.eclipse.ui.IEditorInput anInput) {
+	«EXPAND getActiveEditorSelection FOR editorGen.plugin-»
+	«EXPAND defineDiagramDocument FOR editorGen.plugin-»
+	«EXPAND findSelectionBody-»
+}
+«ENDDEFINE»
+
+«DEFINE getActiveEditorSelection FOR gmfgen::GenPlugin-»
+		//If there are EditParts selected in an open IDiagramWorkbenchPart we return this selection:
+		IEditorPart activeEditor = getActiveEditor(anInput);
+		
+		if(activeEditor!=null && activeEditor instanceof org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart)
+			return (IStructuredSelection)((org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart)activeEditor).getDiagramGraphicalViewer().getSelection();
+			
+«ENDDEFINE»
+
+«DEFINE getActiveEditor FOR gmfgen::GenNavigator-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'NavigatorLinkHelper.xpt')»
+	private IEditorPart getActiveEditor(IEditorInput anInput)
+	{
+		final org.eclipse.ui.IWorkbenchWindow window = org.eclipse.ui.PlatformUI.getWorkbench()
+				.getActiveWorkbenchWindow();
+		
+		if(window==null)
+			return null;
+		
+		final IWorkbenchPage page = window.getActivePage();
+		
+		if(page==null)
+			return null;
+		
+		IEditorPart activeEditor = page.getActiveEditor();
+		
+		if(activeEditor!=null && activeEditor.getEditorInput()==anInput)
+			return activeEditor;
+					
+		return null;
+	}
+«ENDDEFINE»
+
+
+
+

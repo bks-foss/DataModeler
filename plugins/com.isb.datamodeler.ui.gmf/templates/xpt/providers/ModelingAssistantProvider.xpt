@@ -1,0 +1,52 @@
+﻿/*
+ * Copyright (c) 2007, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Dmitry Stadnik (Borland) - initial API and implementation
+ *    Michael Golubev (Borland) - #244970 (GenChildLabelNode can't be link's source/target)
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION xpt::diagram::editparts::Utils»
+«EXTENSION xpt::providers::i18n»
+
+«REM»
+    Permitimos registrar un filtro para los popups de forma de quitar los que no queremos
+«ENDREM» 
+«DEFINE getTypesForPopupBar FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'ModelingAssistantProvider.xpt')»
+	public java.util.List getTypesForPopupBar(org.eclipse.core.runtime.IAdaptable host) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart editPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) host.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		«FOREACH getAllContainers() AS container-»
+			«IF container.getAssistantNodes()->size() > 0-»
+		if (editPart instanceof «container.getEditPartQualifiedClassName()») {
+			«EXPAND CodeStyle::newGenericInstance('types', 'java.util.ArrayList', 'org.eclipse.gmf.runtime.emf.type.core.IElementType')»(«container.getAssistantNodes()->size()»);
+				«FOREACH container.getAssistantNodes()->asSequence() AS node-»
+			types.add(«EXPAND xpt::providers::ElementTypes::accessElementType FOR node»);
+				«ENDFOREACH-»
+			
+			com.isb.datamodeler.diagram.providers.DatamodelerModelingAssistantProviderFilter.filterTypesForPopupBar(types);	
+			
+			return types;
+		}
+			«ENDIF-»
+		«ENDFOREACH-»
+		return java.util.Collections.EMPTY_LIST;
+	}
+«ENDDEFINE»
+«DEFINE getTypesForTarget FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public java.util.List getTypesForTarget(org.eclipse.core.runtime.IAdaptable source,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+			
+		return java.util.Collections.EMPTY_LIST;
+	}
+«ENDDEFINE»

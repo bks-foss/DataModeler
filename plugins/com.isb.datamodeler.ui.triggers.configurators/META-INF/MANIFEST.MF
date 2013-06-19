@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,com.isb.datamodeler.model.triggers,org.
+ eclipse.emf.transaction,com.isb.datamodeler.ui.diagram,com.isb.datamo
+ deler.model
+Export-Package: com.isb.datamodeler.ui.triggers.configurators,com.isb.
+ datamodeler.ui.triggers.configurators.dialogs
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DmUI_TriggersConfigurators.jar
+Bundle-Version: 2.0.0
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.isb.datamodeler.ui.triggers.configurators.DataMo
+ delerTriggerOptionsPlugin
+Bundle-SymbolicName: com.isb.datamodeler.ui.triggers.configurators;sin
+ gleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

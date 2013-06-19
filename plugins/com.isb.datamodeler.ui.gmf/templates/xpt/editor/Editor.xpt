@@ -1,0 +1,148 @@
+﻿/*
+ * Copyright (c) 2006, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::editor::Utils»
+
+«DEFINE Editor FOR gmfgen::GenEditorView-»
+	«EXPAND xpt::Common::copyright FOR editorGen-»
+package «packageName»;
+
+	«EXPAND xpt::Common::generatedClassComment»
+public class «className»  extends org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor«EXPAND implementsList FOR getEditorImplementsList(self)» {
+
+	«EXPAND attributes-»
+	
+	«EXPAND _constructor-»
+	
+	«EXPAND getContextID-»
+	«EXPAND createPaletteRoot FOR editorGen.diagram.palette-»
+	
+	«EXPAND getPreferencesHint-»
+	
+	«EXPAND getContributorId-»
+	«EXPAND setDiagramName-»
+	«EXPAND selectionChanged-»
+	«EXPAND getAdapter-»
+	
+	«EXPAND getDocumentProvider-»
+	
+	«EXPAND getEditingDomain-»
+	
+	«EXPAND setDocumentProvider-»
+	«IF isIDEMode(self)-»
+		
+		«EXPAND gotoMarker-»
+		
+		«EXPAND isSaveAsAllowed-»
+		
+		«EXPAND doSaveAs-»
+		
+		«EXPAND performSaveAs-»
+		
+		«EXPAND getShowInContext-»
+		«EXPAND getNavigatorSelection FOR editorGen.navigator-»
+	«ENDIF-»
+
+	«EXPAND configureGraphicalViewer-»
+
+	«IF editorGen.diagram.generateCreateShortcutAction()-»
+	
+		«EXPAND initializeGraphicalViewer-»
+		
+		«EXPAND DropTargetListener-»
+	«ENDIF-»
+
+	«EXPAND additions-»
+}
+«ENDDEFINE»
+
+«REM»
+	Se referencia la vista del navegador de data modeler (antes era la del project explorer)
+«ENDREM»
+«DEFINE getAdapter FOR gmfgen::GenEditorView-»
+«IF not hasPropertySheet(self) or hasNavigator(self)-»
+	
+«EXPAND xpt::Common::generatedMemberComment('', 'Editor.xpt')»
+«EXPAND CodeStyle::SuppressWarnings('"rawtypes"') FOR editorGen-»
+public Object getAdapter(Class type) {
+	«IF not hasPropertySheet(self)-»
+	if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
+		return null;
+	}
+	«ENDIF-»
+	«IF hasNavigator(self)-»
+	if (type == org.eclipse.ui.part.IShowInTargetList.class) {
+		return new org.eclipse.ui.part.IShowInTargetList() {
+			public String[] getShowInTargetIds() {
+				// Este código ha sido modificado mediante la plantilla dinámica Editor.xpt
+				// Se referencia la vista del navegador de data modeler (antes era la del project explorer)
+				return new String[] { "com.isb.datamodeler.internal.ui.views.DataModelerView" };
+			}
+		};
+	}
+	«ENDIF-»
+	return super.getAdapter(type);
+}
+«ENDIF-»
+«ENDDEFINE»
+
+«REM»
+	Registramos el editor para grabado automático
+«ENDREM»
+«DEFINE configureGraphicalViewer FOR gmfgen::GenEditorView-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'Editor.xpt')»
+	protected void configureGraphicalViewer() {
+		super.configureGraphicalViewer();
+		«EXPAND xpt::editor::DiagramEditorContextMenuProvider::qualifiedClassName FOR editorGen.diagram» provider =
+				new «EXPAND xpt::editor::DiagramEditorContextMenuProvider::qualifiedClassName FOR editorGen.diagram»(this, getDiagramGraphicalViewer());
+		getDiagramGraphicalViewer().setContextMenu(provider);
+		getSite().registerContextMenu(org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
+		
+		// Registramos el editor para grabado automático
+		com.isb.datamodeler.ui.diagram.listeners.DataModelerDiagramEditorSaver.addEditor(this, true);
+	}
+«ENDDEFINE»
+
+«REM»
+	Permitimos modificar el nombre de un diagrama
+«ENDREM»
+«DEFINE setDiagramName FOR gmfgen::GenEditorView-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'Editor.xpt')»
+	public void setDiagramName(String name) {
+		super.setPartName(name);
+		// Permitimos modificar el nombre de un diagrama
+	}
+«ENDDEFINE»
+
+«REM»
+	Escuchamos la seleccion de elementos para mostrarlos en el navegador en caso de linkeado 
+«ENDREM»
+«DEFINE selectionChanged FOR gmfgen::GenEditorView-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'Editor.xpt')»
+	public void selectionChanged(org.eclipse.ui.IWorkbenchPart part, ISelection selection) {
+		super.selectionChanged(part, selection);
+		
+		if(part==this && !selection.isEmpty() && selection instanceof IStructuredSelection)
+		{
+			for(org.eclipse.ui.IViewReference viewRef:part.getSite().getPage().getViewReferences())
+			{
+				if(viewRef.getId().equals("com.isb.datamodeler.internal.ui.views.DataModelerView"))
+				{
+					org.eclipse.ui.navigator.CommonNavigator view = (org.eclipse.ui.navigator.CommonNavigator)viewRef.getView(false);
+					if(view!=null && view.isLinkingEnabled())
+						view.selectReveal((IStructuredSelection)selection);
+				}
+			}
+		}
+	}
+«ENDDEFINE»

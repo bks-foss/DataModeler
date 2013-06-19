@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="triggerConfigurator" name="Trigger Configurator" schema="schema/triggerConfigurator.exsd"/>
+   <extension-point id="initializerExtension" name="Initializer Extension" schema="schema/initializerExtension.exsd"/>
+   <extension
+         point="org.eclipse.emf.transaction.listeners">
+      <listener
+            class="com.isb.datamodeler.schema.triggers.SchemaTriggerListener">
+         <editingDomain
+               id="com.isb.datamodeler.ui.diagram.EditingDomain">
+         </editingDomain>
+         <editingDomain
+               id="com.isb.datamodeler.ui.navigator.EditingDomain">
+         </editingDomain>
+      </listener>
+      <listener
+            class="com.isb.datamodeler.tables.triggers.TableTriggerListener">
+         <editingDomain
+               id="com.isb.datamodeler.ui.diagram.EditingDomain">
+         </editingDomain>
+         <editingDomain
+               id="com.isb.datamodeler.ui.navigator.EditingDomain">
+         </editingDomain>
+      </listener>
+      <listener
+            class="com.isb.datamodeler.constraints.triggers.ReferenceConstraintTriggerListener">
+         <editingDomain
+               id="com.isb.datamodeler.ui.diagram.EditingDomain">
+         </editingDomain>
+         <editingDomain
+               id="com.isb.datamodeler.ui.navigator.EditingDomain">
+         </editingDomain>
+      </listener>
+      <listener
+            class="com.isb.datamodeler.tables.triggers.ColumnTriggerListener">
+         <editingDomain
+               id="com.isb.datamodeler.ui.diagram.EditingDomain">
+         </editingDomain>
+         <editingDomain
+               id="com.isb.datamodeler.ui.navigator.EditingDomain">
+         </editingDomain>
+      </listener>
+      <listener
+            class="com.isb.datamodeler.columns.triggers.DataTypeTriggerListener">
+         <editingDomain
+               id="com.isb.datamodeler.ui.diagram.EditingDomain">
+         </editingDomain>
+         <editingDomain
+               id="com.isb.datamodeler.ui.navigator.EditingDomain">
+         </editingDomain>
+      </listener>
+      <listener
+            class="com.isb.datamodeler.model.triggers.internal.initializers.InitializersTriggerListener">
+         <editingDomain
+               id="com.isb.datamodeler.ui.diagram.EditingDomain">
+         </editingDomain>
+      </listener>
+   </extension>
+</plugin>

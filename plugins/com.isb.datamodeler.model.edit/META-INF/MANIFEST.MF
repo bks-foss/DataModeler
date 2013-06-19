@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: com.isb.datamodeler.accesscontrol.provider,com.isb.dat
+ amodeler.constraints.provider,com.isb.datamodeler.datatypes.provider,
+ com.isb.datamodeler.expressions.provider,com.isb.datamodeler.provider
+ ,com.isb.datamodeler.routines.provider,com.isb.datamodeler.schema.pro
+ vider,com.isb.datamodeler.statements.provider,com.isb.datamodeler.tab
+ les.provider
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DataModeler_ModelEdit.jar
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.emf.ecore.edit;visibility:=reexport,com.is
+ b.datamodeler.ui.model,org.eclipse.core.runtime
+Bundle-Vendor: %providerName
+Bundle-Version: 2.0.0
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.isb.datamodeler.schema.provider.DatamodelerEditP
+ lugin$Implementation
+Bundle-SymbolicName: com.isb.datamodeler.model.edit;singleton:=true
+

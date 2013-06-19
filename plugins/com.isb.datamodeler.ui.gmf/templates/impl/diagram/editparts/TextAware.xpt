@@ -1,0 +1,154 @@
+﻿/*
+ * Copyright (c) 2006, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Dmitry Stadnik (Borland) - initial API and implementation
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«DEFINE methods(needsRefreshBounds : Boolean, readOnly : Boolean, useElementIcon : Boolean, viewmap : gmfgen::Viewmap,
+		modelFacet : gmfgen::LabelModelFacet, host : gmfgen::GenCommonBase, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
+	«EXPAND getLabelTextHelper-»
+	
+	«EXPAND setLabelTextHelper-»
+	
+	«EXPAND getLabelIconHelper-»
+	
+	«EXPAND setLabelIconHelper-»
+	
+	«EXPAND labelSetter-»
+	
+	«EXPAND getModelChildren-»
+	
+	«EXPAND getChildBySemanticHint-»
+	
+	«EXPAND getParserElement(modelFacet)-»
+	
+	«EXPAND getLabelIcon(useElementIcon, diagram)-»
+	
+	«REM»
+		Necesitamos parar el diagrama como parámetro para poder acceder a la adapterFactory del Plugin
+	«ENDREM»
+	«EXPAND getLabelText(diagram)-»
+	
+	«EXPAND setLabelText(diagram)-»
+	
+	«EXPAND getEditText-»
+	
+	«EXPAND isEditable(readOnly)-»
+	
+	«EXPAND getEditTextValidator-»
+	
+	«EXPAND getCompletionProcessor-»
+	
+	«EXPAND getParserOptions-»
+	
+	«EXPAND getParser(modelFacet, diagram, host)-»
+	
+	«EXPAND getManager(diagram)-»
+	
+	«EXPAND setManager-»
+	
+	«EXPAND performDirectEdit-»
+	
+	«EXPAND performDirectEditAtPoint-»
+	
+	«EXPAND performDirectEditWithInitialChar-»
+	
+	«EXPAND performDirectEditRequest-»
+	
+	«EXPAND refreshVisuals(needsRefreshBounds)-»
+	
+	«EXPAND refreshLabel(diagram)-»
+	
+	«EXPAND refreshUnderline-»
+	
+	«EXPAND refreshStrikeThrough-»
+	
+	«EXPAND refreshFont-»
+	
+	«EXPAND setFontColor-»
+	
+	«EXPAND addSemanticListeners-»
+	
+	«EXPAND removeSemanticListeners-»
+	
+	«EXPAND getAccessibleEditPart-»
+	
+	«EXPAND getFontStyleOwnerView(viewmap)-»
+«ENDDEFINE»
+
+«REM»
+En lugar de cargar una imagen estática, las imagenes se calculan usando el ItemProvider correspondiente
+«ENDREM»
+«DEFINE getLabelIcon(useElementIcon : Boolean, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'TextAware.xpt')»
+	protected org.eclipse.swt.graphics.Image getLabelIcon() {
+		«IF useElementIcon-»
+		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		return «diagram.editorGen.plugin.getActivatorQualifiedClassName()».getInstance().getImage(parserElement);
+		«ELSE-»
+		return null;
+		«ENDIF-»
+	}
+«ENDDEFINE»
+
+«REM»
+En lugar de calcular el texto de forma estática, se calcula usando el ItemProvider correspondiente
+«ENDREM»
+«DEFINE getLabelText(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'TextAware.xpt')»
+	protected String getLabelText() {
+		String text = null;
+		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
+		if (parserElement != null) {
+			text = «diagram.editorGen.plugin.getActivatorQualifiedClassName()».getInstance().getItemLabel(parserElement);
+		}
+		if (text == null || text.length() == 0) {
+			text = defaultText;
+		}
+		return text;
+	}
+«ENDDEFINE»
+
+«REM»
+Si un EditPart es Shortcut, no es editable
+«ENDREM»
+«DEFINE isEditable(readOnly : Boolean) FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'TextAware.xpt')»
+	protected boolean isEditable() {
+		«IF readOnly-»
+		return false;
+		«ELSE-»
+		
+		org.eclipse.gmf.runtime.notation.View primaryView = getPrimaryView();
+		boolean isShortCut = primaryView.getEAnnotation("Shortcut")!=null;
+		if(!isShortCut)
+		{
+			org.eclipse.gef.EditPart parent = getParent();
+			if (parent instanceof org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart) 
+			{
+				org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart cEditPart = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart)parent;
+				org.eclipse.gef.EditPart source = cEditPart.getSource();
+				if (source.getModel() instanceof org.eclipse.gmf.runtime.notation.View) 
+				{
+					org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) source.getModel();
+					isShortCut = view.getEAnnotation("Shortcut") != null;
+				}
+			} 
+		}
+
+		return !isShortCut && getParser() != null;
+		«ENDIF-»
+	}
+«ENDDEFINE»

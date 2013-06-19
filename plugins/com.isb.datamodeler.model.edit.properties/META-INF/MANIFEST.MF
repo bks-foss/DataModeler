@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Require-Bundle: com.isb.datamodeler.model.edit,org.eclipse.emf.transac
+ tion,com.isb.datamodeler.ui.model
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: dm_model_editproperties.jar
+Bundle-Version: 2.0.0
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.model.edit.properties;singlet
+ on:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

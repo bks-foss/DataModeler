@@ -1,0 +1,51 @@
+﻿/*
+ * Copyright (c) 2007, 2009 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ *    Dmitry Stadnik (Borland) - creation logic was moved in commands
+ *    Michael Golubev (Borland) - [243151] explicit source/target for links
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::diagram::editpolicies::Utils»
+
+«DEFINE createLinkCommands FOR gmfgen::GenLinkEnd-»
+
+«EXPAND xpt::Common::generatedMemberComment('', 'linkCommands.xpt')»
+protected org.eclipse.gef.commands.Command getCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	org.eclipse.gef.commands.Command command = req.getTarget() == null ?
+			getStartCreateRelationshipCommand(req) : getCompleteCreateRelationshipCommand(req);
+	return command != null ? command : super.getCreateRelationshipCommand(req);
+}
+
+«REM»
+	No permitimos tirar relaciones desde un Shortcut
+«ENDREM»
+«EXPAND xpt::Common::generatedMemberComment('', 'linkCommands.xpt')»
+protected org.eclipse.gef.commands.Command getStartCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	
+	boolean isShortCut =  getHost() instanceof org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart 
+								&& ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart)getHost()).getPrimaryView().getEAnnotation("Shortcut")!=null;
+		
+	if(isShortCut)
+		return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
+	
+	«EXPAND startLinkCommands(self) FOREACH getAllPotentialLinks(self)-»
+	return null;
+}
+
+«EXPAND xpt::Common::generatedMemberComment('', 'linkCommands.xpt')»
+protected org.eclipse.gef.commands.Command getCompleteCreateRelationshipCommand(
+		org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest req) {
+	«EXPAND completeLinkCommands(self) FOREACH getAllPotentialLinks(self)-»
+	return null;
+}
+«ENDDEFINE»

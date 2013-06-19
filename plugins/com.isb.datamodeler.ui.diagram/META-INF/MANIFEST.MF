@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Export-Package: com.isb.datamodeler.diagram.edit.commands,com.isb.data
+ modeler.diagram.edit.parts,com.isb.datamodeler.diagram.edit.policies,
+ com.isb.datamodeler.diagram.navigator,com.isb.datamodeler.diagram.par
+ t,com.isb.datamodeler.diagram.properties,com.isb.datamodeler.diagram.
+ providers,com.isb.datamodeler.diagram.sheet,com.isb.datamodeler.diagr
+ am.util,com.isb.datamodeler.diagram.validation,com.isb.datamodeler.ui
+ .diagram.comparators,com.isb.datamodeler.diagram.actions
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.expressions,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.navigator,
+ org.eclipse.gmf.runtime.diagram.ui.properties,
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
+ com.isb.datamodeler.model.edit;visibility:=reexport,
+ com.isb.datamodeler.model.core,
+ com.isb.datamodeler.ui.model,
+ com.isb.datamodeler.messages,
+ com.isb.datamodeler.model.core.validation,
+ com.isb.datamodeler.model.validation,
+ org.eclipse.gmf.runtime.diagram.ui.providers.ide
+Bundle-Vendor: %providerName
+Bundle-Version: 2.0.1
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.isb.datamodeler.diagram.part.DatamodelerDiagramE
+ ditorPlugin
+Bundle-SymbolicName: com.isb.datamodeler.ui.diagram; singleton:=true
+

@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Export-Package: com.isb.datamodeler.ui.diagram,com.isb.datamodeler.ui.
+ diagram.impl,com.isb.datamodeler.ui.diagram.util,com.isb.datamodeler.
+ ui.model,com.isb.datamodeler.ui.model.validation,com.isb.datamodeler.
+ ui.project,com.isb.datamodeler.ui.project.impl,com.isb.datamodeler.ui
+ .project.util
+Require-Bundle: org.eclipse.core.runtime,com.isb.datamodeler.model;vis
+ ibility:=reexport,com.isb.datamodeler.messages,org.eclipse.gmf.runtim
+ e.notation,com.isb.datamodeler.model.core.validation,org.eclipse.core
+ .resources
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DataModelerUI_Model.jar
+Bundle-Version: 2.0.0
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.ui.model;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

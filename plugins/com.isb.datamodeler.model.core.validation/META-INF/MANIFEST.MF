@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Export-Package: com.isb.datamodeler.model.core.validation,com.isb.data
+ modeler.model.core.validation.db
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: Dm_ModelCoreValidation.jar
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore
+Bundle-Vendor: %providerName
+Bundle-Version: 2.0.0
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.isb.datamodeler.model.core.validation.DMCoreVali
+ dationPlugin
+Bundle-SymbolicName: com.isb.datamodeler.model.core.validation;singlet
+ on:=true
+

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Require-Bundle: com.isb.datamodeler.model.edit,com.isb.datamodeler.mod
+ el.core,org.eclipse.emf.transaction,com.isb.datamodeler.model
+Bundle-Vendor: %providerName
+Bundle-ClassPath: DataModeler_ModelDelegates.jar
+Bundle-Version: 2.0.1
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.model.delegates;singleton:=tr
+ ue
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

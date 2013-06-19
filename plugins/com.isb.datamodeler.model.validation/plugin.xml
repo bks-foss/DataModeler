@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.validation_delegate">
+      <delegate
+            class="com.isb.datamodeler.model.validation.delegates.SQLObjectValidationDelegate"
+            uri="com.isb.datamodeler.model.validation.delegates.SQLObjectValidationDelegate">
+      </delegate>
+   </extension>
+   <extension
+         point="com.isb.datamodeler.validation.validators">
+         <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.DuplicateTableInvValidator"
+           code="[BKSEDMM0001]"
+           id="com.isb.datamodeler.model.validation.validators.DuplicateTableInvValidator"
+           name="[BKSEDMM0001] - Elemento no repetido en Esquema"
+           target="com.isb.datamodeler.schema.ESchema">
+           <description>
+              Valida que no se repitan nombres en objetos de un mismo esquema.
+           </description>
+        </validator>           
+         <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.DuplicateColumnInvValidator"
+           code="[BKSEDMM0002]"
+           id="com.isb.datamodeler.model.validation.validators.DuplicateColumnInvValidator"
+           name="[BKSEDMM0002] - Columnas no repetidas en Tabla"
+           target="com.isb.datamodeler.tables.ETable">
+           <description>
+              Valida que una tabla no tenga columnas con el mismo nombre.
+           </description>
+        </validator>
+        <!-- Validaciones de correción de modelo de datos -->
+         <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.TableHasColumnInvValidator"
+           code="[BKSEDMM0011]"
+           id="com.isb.datamodeler.model.validation.validators.TableHasColumnInvValidator"
+           name="[BKSEDMM0011] - Columnas en Tabla"
+           target="com.isb.datamodeler.tables.ETable">
+           <description>
+              Valida que la tabla tenga al menos una columna.
+           </description>
+        </validator>  
+        <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.ConstraintsHasColumnInvValidator"
+           code="[BKSEDMM0012]"
+           id="com.isb.datamodeler.model.validation.validators.ConstraintsHasColumnInvValidator"
+           name="[BKSEDMM0012] - Columnas en Restricciones"
+           target="com.isb.datamodeler.constraints.EReferenceConstraint">
+           <description>
+              Comprueba que todas las restricciones de clave (PK,FK,UK)del modelo tengan al menos una columna.
+           </description>
+        </validator> 
+        <validator
+           category="regulationRule"
+           class="com.isb.datamodeler.model.validation.validators.DescriptionSQLObjectInvValidator"
+           code="[BKSEDMN0005]"
+           id="com.isb.datamodeler.model.validation.validators.DescriptionSQLObjectInvValidator"
+           name="[BKSEDMM0005] - Todas las tablas , columnas deben estar documentadas"
+           target="com.isb.datamodeler.schema.ESQLObject">
+           <description>
+              Comprueba que todas las tablas , columnas estén documentadas.
+           </description>
+        </validator>
+        <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.TableColumnTypeMandatoryInvValidator"
+           code="[BKSEDMM0014]"
+           id="com.isb.datamodeler.model.validation.validators.TableColumnTypeMandatoryInvValidator"
+           name="[BKSEDMM0014] - El tipo de las columnas de una tabla es obligatorio"
+           target="com.isb.datamodeler.tables.EColumn">
+           <description>
+              Comprueba que la columna tenga tipo.
+           </description>
+        </validator> 
+        <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.DataTypeColumnInvValidator"
+           code="[BKSEDMM0015]"
+           id="com.isb.datamodeler.model.validation.validators.DataTypeColumnInvValidator"
+           name="[BKSEDMM0015] - El tipo de las columnas de una tabla es obligatorio"
+           target="com.isb.datamodeler.tables.EColumn">
+           <description>
+              Comprueba que las columnas tengan definidos los parámetros asociados a su tipo de datos con valores válidos.
+           </description>
+        </validator>   
+        <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.FKColumnsRefsInvValidator"
+           code="[BKSEDMM0016]"
+           id="com.isb.datamodeler.model.validation.validators.FKColumnsRefsInvValidator"
+           name="[BKSEDMM0016] - Correspondencia Columnas Referenciadas"
+           target="com.isb.datamodeler.constraints.EForeignKey">
+           <description>
+              Comprueba que haya correspondencia entre las columnas que forman parte de una FK y las columnas de
+ 			  la clave única referenciada(tanto en el número de columnas como en el tipo de datos y sus parámetros).
+           </description>
+        </validator>  
+        <validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.FKConstraintsInvValidator"
+           code="[BKSEDMM0017]"
+           id="com.isb.datamodeler.model.validation.validators.FKConstraintsInvValidator"
+           name="[BKSEDMM0017] - Coherencia en Relaciones FK."
+           target="com.isb.datamodeler.constraints.EForeignKey">
+           <description>
+              Comprueba que el tipo de relación de una FK sea coherente con las columnas de la tabla.
+           </description>
+        </validator>
+		<validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.NonNullablePKColumnValidator"
+           code="[BKSEDMM0018]"
+           id="com.isb.datamodeler.model.validation.validators.NonNullablePKColumnValidator"
+           name="[BKSEDMM0018] - Columnas no nullables en Primary Key."
+           target="com.isb.datamodeler.constraints.EPrimaryKey">
+           <description>
+              Comprueba que las columnas pertenecientes a la clave primaria sean no nulables.
+           </description>
+        </validator>  
+		<validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.RelationCardinalityValidator"
+           code="[BKSEDMM0019]"
+           id="com.isb.datamodeler.model.validation.validators.RelationCardinalityValidator"
+           name="[BKSEDMM0019] - Cardinalidad de la relación."
+           target="com.isb.datamodeler.constraints.EForeignKey">
+           <description>
+              La cardinalidad de la relación debe ser compatible con la anulabilidad de sus columnas.
+           </description>
+        </validator> 
+       	<validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.SchemaContainsTableInvValidator"
+           code="[BKSEDMM0021]"
+           id="com.isb.datamodeler.model.validation.validators.SchemaContainsTableInvValidator"
+           name="[BKSEDMM0021] - Tablas en esquema."
+           target="com.isb.datamodeler.schema.ESchema">
+           <description>
+              Un esquema debe tener alguna tabla modelada
+           </description>
+        </validator> 
+       	<validator
+           category="mandatoryRule"
+           class="com.isb.datamodeler.model.validation.validators.LOBColumnInConstraints"
+           code="[BKSEDMM0024]"
+           id="com.isb.datamodeler.model.validation.validators.LOBColumnInConstraints"
+           name="[BKSEDMM0024] - Columnas tipo LOB en claves únicas"
+           target="com.isb.datamodeler.constraints.EUniqueConstraint">
+           <description>
+              Las columnas miembro de una restricción PK/UK no pueden ser tipo LOB 
+           </description>
+        </validator>        
+   </extension>
+ </plugin>

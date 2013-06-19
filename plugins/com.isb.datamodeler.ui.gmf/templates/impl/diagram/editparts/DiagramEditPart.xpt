@@ -1,0 +1,47 @@
+﻿/*
+ * Copyright (c) 2006, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Dmitry Stadnik (Borland) - initial API and implementation
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::diagram::editparts::Utils»
+
+
+«DEFINE createDefaultEditPoliciesBody FOR gmfgen::GenDiagram-»
+	super.createDefaultEditPolicies();
+	«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-»
+	«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-»
+	«IF generateCreateShortcutAction() and null = editorGen.application-»
+		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE, new com.isb.datamodeler.diagram.edit.policy.PersistentTableDragDropEditPolicy());
+«REM»
+	NO CREAMOS SHORTCUTS. EN DatamodelerViewProvider al crear una tabla se chequea si pertenece al mismo esquema, y ahi se crea el Shortcut
+«ENDREM»
+
+	«ENDIF-»
+	«IF shouldGenerateDiagramViewmap(self)-»
+		// diagram figure does layout; need to install child editpolicy to show selection feedback
+		installEditPolicy(org.eclipse.gef.EditPolicy.LAYOUT_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
+			protected org.eclipse.gef.EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
+				final org.eclipse.gef.editpolicies.NonResizableEditPolicy p = new org.eclipse.gef.editpolicies.NonResizableEditPolicy();
+				p.setDragAllowed(false);
+				return p;
+			}
+			protected org.eclipse.gef.commands.Command getMoveChildrenCommand(org.eclipse.gef.Request request) {
+				return null;
+			}
+			protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gef.requests.CreateRequest request) {
+				return null;
+			}
+		});
+	«ENDIF-»
+	«EXPAND xpt::diagram::editparts::Common::behaviour FOR self-»
+	// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
+«ENDDEFINE»

@@ -1,0 +1,79 @@
+﻿/*
+ * Copyright (c) 2006, 2009 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Dmitry Stadnik (Borland) - initial API and implementation
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::diagram::editparts::Utils»
+
+«DEFINE _constructor FOR gmfgen::GenNodeLabel-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public «editPartClassName»(org.eclipse.gmf.runtime.notation.View view) {
+		super(view);
+	}
+«ENDDEFINE»
+
+«DEFINE createDefaultEditPoliciesBody FOR gmfgen::GenNodeLabel-»
+	super.createDefaultEditPolicies();
+	installEditPolicy(org.eclipse.gef.EditPolicy.SELECTION_FEEDBACK_ROLE, new «getDiagram().getTextSelectionEditPolicyQualifiedClassName()»());
+	installEditPolicy(org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy());
+	installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, new «getDiagram().getEditPartQualifiedClassName()».NodeLabelDragPolicy());
+	«EXPAND xpt::diagram::editparts::Common::behaviour FOR self-»
+«ENDDEFINE»
+
+«DEFINE refreshBounds FOR gmfgen::GenNodeLabel-»
+	«IF isStoringChildPositions(node)-»
+		«EXPAND xpt::Common::generatedMemberComment»
+		protected void refreshBounds() {
+			int width = ((Integer) getStructuralFeatureValue(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getSize_Width())).intValue();
+			int height = ((Integer) getStructuralFeatureValue(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getSize_Height())).intValue();
+			org.eclipse.draw2d.geometry.Dimension size = new org.eclipse.draw2d.geometry.Dimension(width, height);
+			int x = ((Integer) getStructuralFeatureValue(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getLocation_X())).intValue();
+			int y = ((Integer) getStructuralFeatureValue(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+			org.eclipse.draw2d.geometry.Point loc = new org.eclipse.draw2d.geometry.Point(x, y);
+			((org.eclipse.gef.GraphicalEditPart) getParent()).setLayoutConstraint(this, getFigure(), new org.eclipse.draw2d.geometry.Rectangle(loc, size));
+		}
+	«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE handleNotificationEventBody FOR gmfgen::GenNodeLabel-»
+	Object feature = event.getFeature();
+	«IF isStoringChildPositions(node)-»
+		«EXPAND xpt::diagram::editparts::Common::handleBounds FOR self-»
+	«ENDIF-»
+	«EXPAND xpt::diagram::editparts::Common::handleText FOR self-»
+	super.handleNotificationEvent(event);
+«ENDDEFINE»
+
+// For now, nested class in Diagram's EditPart class, should graduate to top-level (or even runtime)  
+«DEFINE nodeLabelDragPolicyClass FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	/*package-local*/ static class NodeLabelDragPolicy extends org.eclipse.gef.editpolicies.NonResizableEditPolicy {
+
+		«EXPAND xpt::Common::generatedMemberComment»
+		«EXPAND CodeStyle::SuppressWarnings('"rawtypes"')-»
+		protected java.util.List createSelectionHandles() {
+			org.eclipse.gef.handles.MoveHandle h = new org.eclipse.gef.handles.MoveHandle((org.eclipse.gef.GraphicalEditPart) getHost());«REM»org.eclipse.gef.handles.NonResizableHandleKit.moveHandle is better but has return type that needs recast«ENDREM»
+			h.setBorder(null);
+			return java.util.Collections.singletonList(h);
+		}
+
+		«EXPAND xpt::Common::generatedMemberComment»
+		public org.eclipse.gef.commands.Command getCommand(org.eclipse.gef.Request request) {
+			return null;
+		}
+
+		«EXPAND xpt::Common::generatedMemberComment»
+		public boolean understandsRequest(org.eclipse.gef.Request request) {
+			return false;
+		}
+	}
+«ENDDEFINE»

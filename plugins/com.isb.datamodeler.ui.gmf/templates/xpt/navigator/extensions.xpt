@@ -1,0 +1,69 @@
+﻿/*
+ * Copyright (c) 2007, 2009 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Dmitry Stadnik (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+
+«DEFINE extensions FOR gmfgen::GenNavigator-»
+	«EXPAND editorInputPropertyTester('URIEditorInput', 'org.eclipse.emf.common.ui.URIEditorInput', getUriInputTesterQualifiedClassName())-»
+«IF editorGen.diagram.generateShortcutIcon()-»
+
+	«EXPAND editorInputPropertyTester('Shortcut', 'org.eclipse.gmf.runtime.notation.View', editorGen.diagram.getShortcutPropertyTesterQualifiedClassName())-»
+«ENDIF-»
+«REM»
+    No creamos el navigatorContent para los IFile .dm porque crearemos el nuestro
+«ENDREM» 
+	«EXPAND registerBindings-»
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+            <!-- Este código ha sido modificado mediante la plantilla dinámica extensions.xpt
+      	   No creamos el navigatorContent para los IFile .dm porque crearemos el nuestro -->
+   </extension>
+   
+	«EXPAND registerLinkHelper-»
+«ENDDEFINE»
+
+
+«DEFINE registerBindings FOR gmfgen::GenNavigator-»
+   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+«REM»
+    Se crea el viewerContentBinding sobre la vista del navegador de data modeler
+    en vez de sobre el project explorer, que es lo que había antes -->
+«ENDREM»        
+      <!-- Este código ha sido modificado mediante la plantilla dinámica extensions.xpt
+      	   Se crea el viewerContentBinding sobre la vista del navegador de data modeler
+      	   en vez de sobre el project explorer, que es lo que había antes -->
+      <viewerContentBinding viewerId="com.isb.datamodeler.internal.ui.views.DataModelerView">
+         <includes>
+            <contentExtension pattern="«contentExtensionID»"/>
+«IF generateDomainModelNavigator and null <> editorGen.domainGenModel-»
+			<contentExtension pattern="«domainContentExtensionID»"/>
+«ENDIF-»
+            <contentExtension pattern="«linkHelperExtensionID»"/>
+         </includes>
+      </viewerContentBinding>
+«REM»
+ 	Se crea el viewerActionBinding sobre la vista del navegador de data modeler
+    en vez de sobre el project explorer, que es lo que había antes
+«ENDREM»      
+      <!-- Este código ha sido modificado mediante la plantilla dinámica extensions.xpt
+      	   Se crea el viewerActionBinding sobre la vista del navegador de data modeler
+      	   en vez de sobre el project explorer, que es lo que había antes -->
+      <viewerActionBinding viewerId="com.isb.datamodeler.internal.ui.views.DataModelerView">
+         <includes>
+            <actionExtension pattern="«actionProviderID»"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+«ENDDEFINE»

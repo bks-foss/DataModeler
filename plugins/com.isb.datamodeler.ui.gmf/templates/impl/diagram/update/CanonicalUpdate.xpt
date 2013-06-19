@@ -1,0 +1,61 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+
+«EXTENSION xpt::diagram::updater::Utils»
+
+﻿«DEFINE collectAllLinksMethod FOR gmfgen::GenDiagram-»
+«EXPAND xpt::Common::generatedMemberComment»
+protected «EXPAND CodeStyle::G('java.util.Collection', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())» collectAllLinks(org.eclipse.gmf.runtime.notation.View view, «EXPAND CodeStyle::G2('java.util.Map', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')» domain2NotationMap) {
+	if (!«EXPAND xpt::editor::VisualIDRegistry::modelID».equals(«EXPAND xpt::editor::VisualIDRegistry::getModelIDMethodCall»(view))) {
+		return «EXPAND CodeStyle::emptyList»;
+	}
+	«EXPAND CodeStyle::newGenericInstance('result', 'java.util.LinkedList', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())»();
+	switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(view)) {
+		«EXPAND _caseSemanticElement FOREACH getAllSemanticElements(self)-»
+	}
+	for (java.util.Iterator children = view.getChildren().iterator(); children.hasNext();) {
+		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) children.next(), domain2NotationMap));
+	}
+	for (java.util.Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) edges.next(), domain2NotationMap));
+	}
+	return result;
+}
+«ENDDEFINE»
+
+«DEFINE createConnectionsMethod FOR gmfgen::GenDiagram-»
+«EXPAND xpt::Common::generatedMemberComment»
+protected «EXPAND CodeStyle::G('java.util.Collection', 'org.eclipse.core.runtime.IAdaptable')»  createConnections(«EXPAND CodeStyle::G('java.util.Collection', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())» linkDescriptors, «EXPAND CodeStyle::G2('java.util.Map', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')» domain2NotationMap) {
+	«EXPAND CodeStyle::newGenericInstance('adapters', 'java.util.LinkedList', 'org.eclipse.core.runtime.IAdaptable')»();
+	«EXPAND CodeStyle::iterate('nextLinkDescriptor', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName(), 'linkDescriptors')-»
+		org.eclipse.gef.EditPart sourceEditPart = getEditPart(nextLinkDescriptor.getSource(), domain2NotationMap);
+		org.eclipse.gef.EditPart targetEditPart = getEditPart(nextLinkDescriptor.getDestination(), domain2NotationMap);
+		if (sourceEditPart == null || targetEditPart == null) {
+			continue;
+		}
+		org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('nextLinkDescriptor.getVisualID()')», org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, false, ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+		org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest ccr = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest(descriptor);
+		ccr.setType(org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_CONNECTION_START);
+		ccr.setSourceEditPart(sourceEditPart);
+		sourceEditPart.getCommand(ccr);
+		ccr.setTargetEditPart(targetEditPart);
+		ccr.setType(org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_CONNECTION_END);
+		org.eclipse.gef.commands.Command cmd = targetEditPart.getCommand(ccr);
+		if (cmd != null && cmd.canExecute()) {
+			executeCommand(cmd);
+			org.eclipse.core.runtime.IAdaptable viewAdapter = (org.eclipse.core.runtime.IAdaptable) ccr.getNewObject();
+			if (viewAdapter != null) {
+				adapters.add(viewAdapter);
+			}
+		}
+	}
+	return adapters;
+}
+«ENDDEFINE»
+
+«DEFINE getDiagramMethod FOR gmfgen::GenContainerBase-»
+«EXPAND xpt::Common::generatedMemberComment»
+protected org.eclipse.gmf.runtime.notation.Diagram getDiagram() {
+	return ((org.eclipse.gmf.runtime.notation.View) getHost().getModel()).getDiagram();
+}
+«ENDDEFINE»

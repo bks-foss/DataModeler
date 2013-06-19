@@ -1,0 +1,34 @@
+﻿/*
+ * Copyright (c) 2006, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+ 
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«EXTENSION xpt::navigator::Utils»
+ 
+«REM»
+    Modificamos el labelProvider del navegador para que calcule las imagenes basandose en los ItemProviders generados
+«ENDREM» 
+«DEFINE getViewImage FOR gmfgen::GenNavigator-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'NavigatorLabelProvider.xpt')»
+public org.eclipse.swt.graphics.Image getImage(org.eclipse.gmf.runtime.notation.View view) {
+
+	org.eclipse.emf.ecore.EObject element = view.getElement();
+	
+	org.eclipse.jface.resource.ImageDescriptor imageDescriptor = «editorGen.plugin.getActivatorQualifiedClassName()».getInstance().getItemImageDescriptor(element);
+	
+	if(imageDescriptor!=null)
+		return imageDescriptor.createImage();
+			
+	return getImage(«EXPAND unknownElementKey», null); «EXPAND xpt::Common::nonNLS»
+}
+«ENDDEFINE»
+

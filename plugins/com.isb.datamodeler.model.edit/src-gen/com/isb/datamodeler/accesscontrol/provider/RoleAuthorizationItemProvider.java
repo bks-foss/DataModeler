@@ -1,0 +1,279 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id: RoleAuthorizationItemProvider.java,v 1.7 2011/08/12 09:53:18 aalvamat Exp $
+ */
+package com.isb.datamodeler.accesscontrol.provider;
+
+
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.isb.datamodeler.accesscontrol.EAccesscontrolPackage;
+import com.isb.datamodeler.accesscontrol.ERoleAuthorization;
+import com.isb.datamodeler.provider.IItemPropertyDescriptorProvider;
+import com.isb.datamodeler.schema.provider.DatamodelerEditPlugin;
+import com.isb.datamodeler.schema.provider.SQLObjectItemProvider;
+
+/**
+ * This is the item provider adapter for a {@link com.isb.datamodeler.accesscontrol.ERoleAuthorization} object.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class RoleAuthorizationItemProvider
+	extends SQLObjectItemProvider
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
+	/**
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoleAuthorizationItemProvider(AdapterFactory adapterFactory) {
+		super(adapterFactory);
+	}
+
+	/**
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
+
+			addGrantablePropertyDescriptor(object);
+			addRolePropertyDescriptor(object);
+			addGranteePropertyDescriptor(object);
+			addGrantorPropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Grantable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGrantablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RoleAuthorization_grantable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RoleAuthorization_grantable_feature", "_UI_RoleAuthorization_type"),
+				 EAccesscontrolPackage.Literals.ROLE_AUTHORIZATION__GRANTABLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RoleAuthorization_role_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RoleAuthorization_role_feature", "_UI_RoleAuthorization_type"),
+				 EAccesscontrolPackage.Literals.ROLE_AUTHORIZATION__ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Grantee feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGranteePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RoleAuthorization_grantee_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RoleAuthorization_grantee_feature", "_UI_RoleAuthorization_type"),
+				 EAccesscontrolPackage.Literals.ROLE_AUTHORIZATION__GRANTEE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Grantor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGrantorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RoleAuthorization_grantor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RoleAuthorization_grantor_feature", "_UI_RoleAuthorization_type"),
+				 EAccesscontrolPackage.Literals.ROLE_AUTHORIZATION__GRANTOR,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns RoleAuthorization.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RoleAuthorization"));
+	}
+
+	/**
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getText(Object object) {
+		String label = ((ERoleAuthorization)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_RoleAuthorization_type") :
+			label;
+	}
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
+
+		switch (notification.getFeatureID(ERoleAuthorization.class)) {
+			case EAccesscontrolPackage.ROLE_AUTHORIZATION__GRANTABLE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return DatamodelerEditPlugin.INSTANCE;
+	}
+
+    /**
+	 * @generated
+     */
+	protected ItemPropertyDescriptor createItemPropertyDescriptor(AdapterFactory adapterFactory,
+															       ResourceLocator resourceLocator,
+															       String displayName,
+															       String description,
+															       EStructuralFeature feature, 
+															       boolean isSettable,
+															       boolean multiLine,
+															       boolean sortChoices,
+															       Object staticImage,
+															       String category,
+															       String [] filterFlags) {
+		
+		ComposedAdapterFactory composedAdapterFactory = new ComposedAdapterFactory(
+				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		
+		IItemPropertyDescriptorProvider descriptorProvider = (IItemPropertyDescriptorProvider)composedAdapterFactory.adapt(getTarget(), IItemPropertyDescriptorProvider.class);
+		
+		if(descriptorProvider!=null)
+			return descriptorProvider.createItemPropertyDescriptor(
+					adapterFactory, 
+					resourceLocator, 
+					displayName, 
+					description, 
+					feature, 
+					isSettable, 
+					multiLine, 
+					sortChoices, 
+					staticImage, 
+					category, 
+					filterFlags);
+
+		return super.createItemPropertyDescriptor(
+				adapterFactory, 
+				resourceLocator, 
+				displayName, 
+				description, 
+				feature, 
+				isSettable, 
+				multiLine, 
+				sortChoices, 
+				staticImage, 
+				category, 
+				filterFlags);
+	}
+}

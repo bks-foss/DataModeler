@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Require-Bundle: com.isb.datamodeler.messages,org.eclipse.ui.ide,org.ec
+ lipse.ui.navigator,com.isb.datamodeler.ui.model.edit,org.eclipse.emf.
+ databinding,org.eclipse.gmf.runtime.diagram.ui.properties,com.isb.dat
+ amodeler.ui.diagram,com.isb.datamodeler.model.core,org.eclipse.jface.
+ databinding,com.isb.datamodeler.model.core.validation,org.eclipse.cor
+ e.expressions,org.eclipse.team.cvs.core,com.isb.datamodeler.compare,c
+ om.isb.datamodeler.model.triggers,com.isb.datamodeler.ui.triggers.con
+ figurators,org.eclipse.ui.navigator.resources,org.eclipse.emf.compare
+ .ui,org.eclipse.core.databinding.property,org.eclipse.compare,org.ecl
+ ipse.gmf.runtime.diagram.ui.resources.editor
+Export-Package: com.isb.datamodeler.internal.ui.views.actions,com.isb.
+ datamodeler.internal.ui.views.actions.validation,com.isb.datamodeler.
+ ui,com.isb.datamodeler.ui.views,com.isb.datamodeler.ui.wizards
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DataModelerUI.jar
+Bundle-Version: 2.0.2
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.isb.datamodeler.ui.DataModelerUI
+Bundle-SymbolicName: com.isb.datamodeler.ui;singleton:=true
+

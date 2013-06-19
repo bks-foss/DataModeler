@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Require-Bundle: com.isb.datamodeler.model.triggers,com.isb.datamodeler
+ .ui.diagram,org.eclipse.emf.common.ui,org.eclipse.gmf.runtime.diagram
+ .ui,com.isb.datamodeler.ui,com.isb.datamodeler.ui.model.edit,org.ecli
+ pse.ui.ide,org.eclipse.gmf.runtime.diagram.ui.resources.editor
+Bundle-Vendor: %providerName
+Bundle-ClassPath: DmUI_ModelTriggers.jar
+Bundle-Version: 2.0.0
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.ui.model.triggers;singleton:=
+ true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

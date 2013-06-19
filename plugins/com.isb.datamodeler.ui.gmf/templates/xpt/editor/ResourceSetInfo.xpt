@@ -1,0 +1,60 @@
+﻿/*
+ * Copyright (c) 2007, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«REM»
+	Comentamos el dispose del editing domain porque ahora lo añadimos de forma estática.
+«ENDREM»
+«DEFINE dispose FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment('', 'ResourceSetInfo.xpt')»
+public void dispose() {
+	«IF null = editorGen.application-»
+	stopResourceListening();
+	«ENDIF-»
+	getResourceSet().eAdapters().remove(myResourceSetListener);
+«REM»
+	//Como trabajamos com dominio de edicion comun, no queremos hacer unload del recurso, ya que el navegador sigue vinculado	
+	«EXPAND CodeStyle::iterate('resource', 'org.eclipse.emf.ecore.resource.Resource', 'it', 'getLoadedResourcesIterator()')-»
+		resource.unload();
+	}
+«ENDREM»
+«REM»FIXME: Perhaps, should wrap unload into transaction, otherwise each unload triggers a lot of root transactions«ENDREM-»
+	// Comentamos el dispose del editing domain porque ahora lo añadimos de forma estática.
+	//getEditingDomain().dispose();
+}
+«ENDDEFINE»
+«DEFINE handleResourceDeletedSD FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+public boolean handleResourceDeleted(org.eclipse.emf.ecore.resource.Resource resource) {
+	«EXPAND updateSynchStateSD-»
+	
+	// Revisar de cara a OPEN SOURCE: Filtramos para evitar que al borrar un proyecto
+	// se cierren todos los diagrams que tengamos abiertos aunque no pertenezcan a dicho proyecto.
+	// Ver bugzilla 21183 
+	if (ResourceSetInfo.this
+			.getEditorInput() instanceof org.eclipse.emf.common.ui.URIEditorInput) 
+	{
+		org.eclipse.emf.common.ui.URIEditorInput uriEditorInput = (org.eclipse.emf.common.ui.URIEditorInput) ResourceSetInfo.this.getEditorInput();
+		if (!resource.getURI().lastSegment()
+				.equals(uriEditorInput.getURI().lastSegment()))
+			return true;
+	}
+	
+	org.eclipse.swt.widgets.Display.getDefault().asyncExec(new java.lang.Runnable() {
+		public void run() {
+			fireElementDeleted(ResourceSetInfo.this.getEditorInput());
+		}
+	});
+	return true;
+}
+«ENDDEFINE»

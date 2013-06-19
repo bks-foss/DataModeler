@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %providerName
+Bundle-Version: 2.0.1
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.ui.gmf;singleton:=true
+

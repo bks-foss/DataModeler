@@ -1,0 +1,30 @@
+/*
+ * Copyright (c) 2007, 2010 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Artem Tikhomirov (Borland) - initial API and implementation
+ */
+import xpt.GenModelUtils;
+
+modeltype gmfgen uses "http://www.eclipse.org/gmf/2009/GenModel";
+
+library GenEditorGenerator;
+
+-- FIXME remove java-only GenEditorGenerator#hasAudits or declare it in metamodel
+helper hasAudits(editorGen : gmfgen::GenEditorGenerator) : Boolean {
+	return editorGen.audits <> null and editorGen.audits.rules->notEmpty()
+}
+-- see GenModelUtils#jdkComplianceLevel
+query gmfgen::GenEditorGenerator::jdkComplianceLevel() : Integer {
+	-- TODO honest field in the GenEditorGenerator instead of hardcoded value
+	return if self.diagram.domainDiagramElement.oclIsUndefined() then 4 else self.diagram.domainDiagramElement.jdkComplianceLevel()	endif;
+}
+--convenience
+query gmfgen::GenCommonBase::jdkComplianceLevel() : Integer {
+	return self.getDiagram().editorGen.jdkComplianceLevel()
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.isb.datamodeler.model.triggers.triggerConfigurator">
+      <configurator
+            configurator="com.isb.datamodeler.ui.triggers.configurators.constraints.RemoveForeignKeyMembersTriggerConfigurator"
+            trigger="com.isb.datamodeler.constraints.triggers.RemoveForeignKeyMembersTrigger">
+      </configurator>
+      <configurator
+            configurator="com.isb.datamodeler.ui.triggers.configurators.constraints.AddForeignKeyReferencedMemberTriggerConfigurator"
+            trigger="com.isb.datamodeler.constraints.triggers.AddForeignKeyReferencedMembersTrigger">
+      </configurator>
+      <configurator
+            configurator="com.isb.datamodeler.ui.triggers.configurators.tables.SetColumnNameTriggerConfigurator"
+            trigger="com.isb.datamodeler.tables.triggers.SetColumnNameTrigger">
+      </configurator>
+      <configurator
+            configurator="com.isb.datamodeler.ui.triggers.configurators.tables.TableConstraintInitializerTriggerConfigurator"
+            trigger="com.isb.datamodeler.tables.triggers.TableConstraintInitializerTrigger">
+      </configurator>
+   </extension>
+
+</plugin>

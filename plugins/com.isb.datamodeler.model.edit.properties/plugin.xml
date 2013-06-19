@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            class="com.isb.datamodeler.constraints.properties.ConstraintPropertyDescriptorAdapterFactory"
+            supportedTypes="com.isb.datamodeler.provider.IItemPropertyDescriptorProvider"
+            uri="http:///com/isb/datamodeler/model/constraints.ecore">
+      </factory>
+      <factory
+            class="com.isb.datamodeler.tables.properties.TablesPropertyDescriptorAdapterFactory"
+            supportedTypes="com.isb.datamodeler.provider.IItemPropertyDescriptorProvider"
+            uri="http:///com/isb/datamodeler/model/tables.ecore">
+      </factory>
+      <factory
+            class="com.isb.datamodeler.datatypes.properties.DataTypesPropertyDescriptorAdapterFactory"
+            supportedTypes="com.isb.datamodeler.provider.IItemPropertyDescriptorProvider"
+            uri="http:///com/isb/datamodeler/model/datatypes.ecore">
+      </factory>
+      <factory
+            class="com.isb.datamodeler.schemas.properties.SchemasPropertyDescriptorAdapterFactory"
+            supportedTypes="com.isb.datamodeler.provider.IItemPropertyDescriptorProvider"
+            uri="http:///com/isb/datamodeler/model/schema.ecore">
+      </factory>
+            <factory
+            class="com.isb.datamodeler.projects.properties.ProjectsPropertyDescriptorAdapterFactory"
+            supportedTypes="com.isb.datamodeler.provider.IItemPropertyDescriptorProvider"
+            uri="http:///com/isb/datamodeler/ui/model/project.ecore">
+      </factory>
+   </extension>
+</plugin>
