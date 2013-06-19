@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Export-Package: com.isb.datamodeler.messages
+Require-Bundle: org.eclipse.core.runtime
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: DataModelerMessages.jar
+Bundle-Version: 2.0.0
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-Activator: com.isb.datamodeler.messages.DataModelerMessagesPlug
+ in
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.isb.datamodeler.messages;singleton:=true
+
